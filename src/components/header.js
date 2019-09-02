@@ -50,7 +50,7 @@ const Header = ({ siteTitle }) => {
           </li>
           <li className="head-el head-el-6s">
             <Link to="/" id="contact-btn">
-              About
+              Contact
             </Link>
           </li>
         </ul>
