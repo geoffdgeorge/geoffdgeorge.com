@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="About" />
+    <SEO title="About Me" />
     <section id="opening-section">
       <h1 class="opening-h1">Hey there!</h1>
       <p>

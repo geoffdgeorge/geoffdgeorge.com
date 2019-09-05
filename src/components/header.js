@@ -39,17 +39,17 @@ const Header = ({ siteTitle }) => {
             </Link>
           </li>
           <li className="head-el head-el-4s">
-            <Link to="/page-2" id="portfolio-btn">
+            <Link to="/portfolio" id="portfolio-btn">
               Portfolio
             </Link>
           </li>
           <li className="head-el head-el-5s">
-            <Link to="/" id="cv-btn">
+            <Link to="/cv" id="cv-btn">
               CV
             </Link>
           </li>
           <li className="head-el head-el-6s">
-            <Link to="/" id="contact-btn">
+            <Link to="/contact" id="contact-btn">
               Contact
             </Link>
           </li>
