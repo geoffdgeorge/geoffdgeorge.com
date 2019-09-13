@@ -1,7 +1,8 @@
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import PropTypes from 'prop-types'
-import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
@@ -16,7 +17,7 @@ const Header = ({ siteTitle }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <header>
@@ -30,41 +31,66 @@ const Header = ({ siteTitle }) => {
             borderRadius: `50%`,
           }}
           alt="A portrait photo of me"
+          draggable={true}
         />
         <h1 className="head-el head-el-2s">{siteTitle}</h1>
         <ul className="row">
           <li className="head-el head-el-3s">
-            <Link to="/" id="about-btn">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/"
+              id="about-btn"
+            >
               About
-            </Link>
+            </AniLink>
           </li>
           <li className="head-el head-el-4s">
-            <Link to="/portfolio" id="portfolio-btn">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/portfolio"
+              id="portfolio-btn"
+            >
               Portfolio
-            </Link>
+            </AniLink>
           </li>
           <li className="head-el head-el-5s">
-            <Link to="/cv" id="cv-btn">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/cv"
+              id="cv-btn"
+            >
               CV
-            </Link>
+            </AniLink>
           </li>
           <li className="head-el head-el-6s">
-            <Link to="/contact" id="contact-btn">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/contact"
+              id="contact-btn"
+            >
               Contact
-            </Link>
+            </AniLink>
           </li>
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

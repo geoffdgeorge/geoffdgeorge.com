@@ -5,10 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
-import Header from './header'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import { TransitionPortal } from 'gatsby-plugin-transition-link';
+import Header from './header';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,21 +20,24 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div id="site-container">
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <TransitionPortal id="transition-portal">
+        <Header siteTitle={data.site.siteMetadata.title} />
+      </TransitionPortal>
+      <div></div>
       <main>{children}</main>
       <footer>
         <p>Copyright © {new Date().getFullYear()} Geoff George</p>
       </footer>
     </div>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
