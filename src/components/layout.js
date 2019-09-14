@@ -23,11 +23,11 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div id="site-container">
+    <div className="site-container">
       <TransitionPortal id="transition-portal">
         <Header siteTitle={data.site.siteMetadata.title} />
       </TransitionPortal>
-      <main>{children}</main>
+      <main className='main-section'>{children}</main>
       <footer>
         <p>Copyright © {new Date().getFullYear()} Geoff George</p>
       </footer>

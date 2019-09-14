@@ -20,8 +20,8 @@ const Header = ({ siteTitle }) => {
   `);
 
   return (
-    <header>
-      <nav>
+    <header className='header-container'>
+      <nav className='header-nav'>
         <Img
           fluid={data.placeholderImage.childImageSharp.fluid}
           className='portrait-img'
