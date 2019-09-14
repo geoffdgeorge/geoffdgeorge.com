@@ -24,14 +24,8 @@ const Header = ({ siteTitle }) => {
       <nav>
         <Img
           fluid={data.placeholderImage.childImageSharp.fluid}
-          style={{
-            width: `10rem`,
-            height: `10rem`,
-            border: `0.1rem rgb(196, 196, 196) solid`,
-            borderRadius: `50%`,
-          }}
+          className='portrait-img'
           alt="A portrait photo of me"
-          draggable={true}
         />
         <h1 className="head-el head-el-2s">{siteTitle}</h1>
         <ul className="row">

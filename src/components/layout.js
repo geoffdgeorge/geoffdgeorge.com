@@ -27,7 +27,6 @@ const Layout = ({ children }) => {
       <TransitionPortal id="transition-portal">
         <Header siteTitle={data.site.siteMetadata.title} />
       </TransitionPortal>
-      <div></div>
       <main>{children}</main>
       <footer>
         <p>Copyright © {new Date().getFullYear()} Geoff George</p>
