@@ -21,8 +21,19 @@ body {
   .site-container {
     display: grid;
     width: 100%;
-    grid-template: 100% / 100%;
+    grid-template: 1fr / 1fr;
     padding-top: 7rem;
+  }
+
+  .tl-edges {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    height: 100vh;
+  }
+
+  .tl-wrapper {
+    display: grid;
+    grid-template: 1fr / 1fr;
   }
 
   .main-section {
@@ -60,10 +71,11 @@ body {
     background-color: rgba(84, 34, 0, 0.5);
     height: 7rem;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template: auto / auto auto;
+    justify-content: center;
+    grid-column-gap: 1rem;
+    align-items: center
   }
 
   .gatsby-plugin-transition-link-portal {
@@ -71,21 +83,22 @@ body {
   }
 
   .portrait-img {
-    width: 5rem;
-    height: 5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border: 0.1rem rgb(196, 196, 196) solid;
     border-radius: 50%;
+    justify-self: end
   }
 
   .header-container h1 {
     color: rgb(255, 255, 255);
     text-shadow: 0 0 0.3rem rgb(150, 88, 45);
-    border-bottom: 0.2rem solid rgb(0, 141, 150);
+    border-left: 0.2rem solid rgb(0, 141, 150);
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 700;
-    font-size: 2.5rem;
-    margin: 1rem 0;
-    padding-bottom: 1rem;
+    font-size: 2rem;
+    padding-left: 1rem;
+    margin: 0
   }
 
   .header-container ul {
@@ -94,6 +107,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    grid-column: 1 / 3;
   }
 
   .header-container li {
@@ -101,34 +115,9 @@ body {
     margin: 0 0.75rem;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: .8rem;
     text-align: center;
   }
-
-  /* .head-el {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-
-  .head-el-2s {
-    transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s;
-  }
-
-  .head-el-3s {
-    transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
-  }
-
-  .head-el-4s {
-    transition: opacity 0.4s ease 0.4s, transform 0.4s ease 0.4s;
-  }
-
-  .head-el-5s {
-    transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
-  }
-
-  .head-el-6s {
-    transition: opacity 0.4s ease 0.6s, transform 0.4s ease 0.6s;
-  } */
 
   .header-container a {
     color: rgb(255, 255, 255);
@@ -504,6 +493,17 @@ body {
   }
 }
 
+@media only screen and (min-width: 400px) {
+  .header-container li {
+    list-style: none;
+    margin: 0 0.75rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
 @media only screen and (min-width: 479px) {
   #contact-icons {
     width: 400px;
@@ -546,6 +546,12 @@ body {
   }
 }
 
+@media only screen and (min-width: 799px) {
+  #contact-icons {
+    width: 400px;
+  }
+}
+
 @media only screen and (min-width: 825px) {
   .site-container {
     grid-template: auto auto / 20rem 1fr;
@@ -561,8 +567,18 @@ body {
 
   .header-nav {
     height: 100vh;
+    display: flex;
     flex-direction: column;
     justify-content: center
+  }
+
+  .header-container h1 {
+    border-bottom: 0.2rem solid rgb(0, 141, 150);
+    border-left: none;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    padding-left: 0;
   }
 
   .header-container ul {
@@ -571,9 +587,10 @@ body {
 
   .header-container li {
     margin: 0 0 1rem;
+    font-size: 1.2rem;
   }
 
-  main {
+  .main-section {
     grid-column-start: 2;
     padding-top: 0;
   }
@@ -609,12 +626,6 @@ body {
 
   footer {
     grid-column: 2 / -1;
-  }
-}
-
-@media only screen and (min-width: 799px) {
-  #contact-icons {
-    width: 400px;
   }
 }
 

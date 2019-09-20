@@ -27,9 +27,9 @@ const Header = ({ siteTitle }) => {
           className='portrait-img'
           alt="A portrait photo of me"
         />
-        <h1 className="head-el head-el-2s">{siteTitle}</h1>
+        <h1>{siteTitle}</h1>
         <ul className="row">
-          <li className="head-el head-el-3s">
+          <li>
             <AniLink
               swipe
               direction="right"
@@ -40,7 +40,7 @@ const Header = ({ siteTitle }) => {
               About
             </AniLink>
           </li>
-          <li className="head-el head-el-4s">
+          <li>
             <AniLink
               swipe
               direction="right"
@@ -51,7 +51,7 @@ const Header = ({ siteTitle }) => {
               Portfolio
             </AniLink>
           </li>
-          <li className="head-el head-el-5s">
+          <li>
             <AniLink
               swipe
               direction="right"
@@ -62,7 +62,18 @@ const Header = ({ siteTitle }) => {
               CV
             </AniLink>
           </li>
-          <li className="head-el head-el-6s">
+          <li>
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/blog"
+              id="contact-btn"
+            >
+              Blog
+            </AniLink>
+          </li>
+          <li>
             <AniLink
               swipe
               direction="right"
