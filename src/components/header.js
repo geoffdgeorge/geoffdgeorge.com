@@ -20,67 +20,37 @@ const Header = ({ siteTitle }) => {
   `);
 
   return (
-    <header className='header-container'>
-      <nav className='header-nav'>
+    <header className="header-container">
+      <nav className="header-nav">
         <Img
           fluid={data.placeholderImage.childImageSharp.fluid}
-          className='portrait-img'
+          className="portrait-img"
           alt="A portrait photo of me"
         />
         <h1>{siteTitle}</h1>
         <ul className="row">
           <li>
-            <AniLink
-              swipe
-              direction="right"
-              duration={0.3}
-              to="/"
-              id="about-btn"
-            >
+            <AniLink swipe direction="right" duration={0.3} to="/">
               About
             </AniLink>
           </li>
           <li>
-            <AniLink
-              swipe
-              direction="right"
-              duration={0.3}
-              to="/portfolio"
-              id="portfolio-btn"
-            >
+            <AniLink swipe direction="right" duration={0.3} to="/portfolio">
               Portfolio
             </AniLink>
           </li>
           <li>
-            <AniLink
-              swipe
-              direction="right"
-              duration={0.3}
-              to="/cv"
-              id="cv-btn"
-            >
+            <AniLink swipe direction="right" duration={0.3} to="/cv">
               CV
             </AniLink>
           </li>
           <li>
-            <AniLink
-              swipe
-              direction="right"
-              duration={0.3}
-              to="/blog"
-              id="contact-btn"
-            >
+            <AniLink swipe direction="right" duration={0.3} to="/blog">
               Blog
             </AniLink>
           </li>
           <li>
-            <AniLink
-              swipe
-              direction="right"
-              duration={0.3}
-              to="/contact"
-              id="contact-btn"
-            >
+            <AniLink swipe direction="right" duration={0.3} to="/contact">
               Contact
             </AniLink>
           </li>

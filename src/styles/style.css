@@ -190,7 +190,7 @@ body {
 
 @media only screen and (min-width: 650px) {
   .header-nav {
-    grid-template: min-content / min-content 13rem 1fr;
+    grid-template: min-content / min-content 12.5rem 1fr;
     grid-column-gap: 1rem;
     align-items: center;
   }
