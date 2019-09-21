@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 const Portfolio = () => (
   <Layout>
     <SEO title="Portfolio" />
-    <p>This is the Portfolio page</p>
+    <p className="link-section grid">This is the Portfolio page</p>
   </Layout>
 );
 

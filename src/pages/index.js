@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 const IndexPage = () => (
   <Layout>
     <SEO title="About Me" />
-    <section className="opening-section grid">
+    <section className="link-section grid">
       <h1 className="nunito-sans color-teal">Hey there!</h1>
       <p className="noto-serif-jp">
         I&rsquo;m a longtime magazine writer and editor turned web developer and

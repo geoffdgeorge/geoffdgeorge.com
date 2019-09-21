@@ -139,26 +139,26 @@ body {
     transform: scale(1.2);
   }
 
-  /* Intro Section Styling */
+  /* Link Section Styling */
 
-  .opening-section h1 {
+  .link-section h1 {
     font-weight: 400;
     text-align: center;
     margin: 0 0 1rem 0;
   }
 
-  .opening-section p {
+  .link-section p {
     margin-bottom: 1rem;
     font-weight: 300;
     font-size: 1rem;
     line-height: 1.4rem;
   }
 
-  .opening-section p:last-child {
+  .link-section p:last-child {
     margin-bottom: 0;
   }
 
-  .opening-section p a {
+  .link-section p a {
     text-decoration: none;
   }
 
@@ -269,7 +269,7 @@ body {
     height: 10rem;
   }
 
-  .opening-section {
+  .link-section {
     justify-items: center;
     align-content: center;
     height: 100vh;

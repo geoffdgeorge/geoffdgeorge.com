@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 const Contact = () => (
   <Layout>
     <SEO title="Contact" />
-    <p>This is the Contact page</p>
+    <p className='link-section grid'>This is the Contact page</p>
   </Layout>
 );
 

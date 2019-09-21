@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 const CV = () => (
   <Layout>
     <SEO title="CV" />
-    <p>This is the CV page</p>
+    <p className='link-section grid'>This is the CV page</p>
   </Layout>
 );
 
