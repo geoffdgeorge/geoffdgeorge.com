@@ -18,9 +18,31 @@ body {
 @media only screen and (min-width: 320px) {
   /* General But Responsive Styling */
 
-  .site-container {
+  .grid {
     display: grid;
+  }
+
+  .nunito-sans {
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .noto-serif-jp {
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .w-100 {
     width: 100%;
+  }
+
+  .color-white {
+    color: rgb(255, 255, 255);
+  }
+
+  .color-teal {
+    color: rgb(0, 141, 150);
+  }
+
+  .site-container {
     grid-template: 1fr / 1fr;
     padding-top: 5rem;
   }
@@ -40,37 +62,17 @@ body {
     padding: 2rem;
   }
 
-  .secondary-head {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 200;
-    font-size: 1.3rem;
-    color: rgb(84, 34, 0);
-    align-self: center;
-    justify-self: center;
-    width: 100%;
-    text-align: center;
-    border-bottom: 0.01rem solid rgb(84, 34, 0);
-    line-height: 0.1rem;
-  }
-
-  .secondary-head span {
-    background: #fff;
-    padding: 0 0.4rem;
-  }
-
   /* Header Styling */
 
   .header-container {
     background-image: url(../images/personal/meagan-h-1414289-unsplash.jpg);
     background-position: center center;
     background-size: cover;
-    width: 100%;
   }
 
   .header-nav {
     background-color: rgba(84, 34, 0, 0.5);
     padding: 0.5rem 1rem;
-    width: 100%;
     height: 5rem;
     display: grid;
     grid-template: min-content min-content / auto 1fr;
@@ -94,10 +96,8 @@ body {
   }
 
   .header-container h1 {
-    color: rgb(255, 255, 255);
     text-shadow: 0 0 0.3rem rgb(150, 88, 45);
     border-bottom: 0.2rem solid rgb(0, 141, 150);
-    font-family: 'Nunito Sans', sans-serif;
     font-weight: 700;
     font-size: 1.7rem;
     padding-bottom: 0.5rem;
@@ -117,14 +117,12 @@ body {
 
   .header-container li {
     list-style: none;
-    font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     font-size: 0.8rem;
     text-align: center;
   }
 
   .header-container a {
-    color: rgb(255, 255, 255);
     text-decoration: none;
     text-shadow: 0 0 0.3rem rgb(150, 88, 45);
     display: inline-block;
@@ -144,8 +142,6 @@ body {
   /* Intro Section Styling */
 
   .opening-section h1 {
-    color: rgb(0, 141, 150);
-    font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     text-align: center;
     margin: 0 0 1rem 0;
@@ -153,7 +149,6 @@ body {
 
   .opening-section p {
     margin-bottom: 1rem;
-    font-family: 'Noto Serif JP', serif;
     font-weight: 300;
     font-size: 1rem;
     line-height: 1.4rem;
@@ -164,25 +159,21 @@ body {
   }
 
   .opening-section p a {
-    color: rgb(0, 141, 150);
     text-decoration: none;
   }
 
   /* Footer Styling */
 
-  footer {
+  .foot {
     background-color: rgb(0, 141, 150);
     border-top: 0.2rem solid rgb(84, 34, 0);
     display: grid;
-    width: 100%;
     height: 3rem;
-    color: rgb(255, 255, 255);
     justify-items: center;
     align-items: center;
   }
 
-  footer p {
-    font-family: 'Nunito Sans', sans-serif;
+  .foot p {
     font-weight: 200;
     font-size: 0.8rem;
   }
@@ -279,13 +270,12 @@ body {
   }
 
   .opening-section {
-    display: grid;
     justify-items: center;
     align-content: center;
     height: 100vh;
   }
 
-  footer {
+  .foot {
     grid-column: 2 / -1;
   }
 }

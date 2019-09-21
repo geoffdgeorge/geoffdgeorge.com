@@ -27,30 +27,60 @@ const Header = ({ siteTitle }) => {
           className="portrait-img"
           alt="A portrait photo of me"
         />
-        <h1>{siteTitle}</h1>
+        <h1 className="nunito-sans color-white">{siteTitle}</h1>
         <ul className="row">
-          <li>
-            <AniLink swipe direction="right" duration={0.3} to="/">
+          <li className="nunito-sans">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/"
+              className="color-white"
+            >
               About
             </AniLink>
           </li>
-          <li>
-            <AniLink swipe direction="right" duration={0.3} to="/portfolio">
+          <li className="nunito-sans">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/portfolio"
+              className="color-white"
+            >
               Portfolio
             </AniLink>
           </li>
-          <li>
-            <AniLink swipe direction="right" duration={0.3} to="/cv">
+          <li className="nunito-sans">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/cv"
+              className="color-white"
+            >
               CV
             </AniLink>
           </li>
-          <li>
-            <AniLink swipe direction="right" duration={0.3} to="/blog">
+          <li className="nunito-sans">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/blog"
+              className="color-white"
+            >
               Blog
             </AniLink>
           </li>
-          <li>
-            <AniLink swipe direction="right" duration={0.3} to="/contact">
+          <li className="nunito-sans">
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to="/contact"
+              className="color-white"
+            >
               Contact
             </AniLink>
           </li>
