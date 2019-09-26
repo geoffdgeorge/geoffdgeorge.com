@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { TransitionPortal } from 'gatsby-plugin-transition-link';
-import Header from './header';
+import BackgroundSection from './bgImg'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
   return (
     <div className="site-container grid">
       <TransitionPortal id="transition-portal">
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <BackgroundSection siteTitle={data.site.siteMetadata.title} />
       </TransitionPortal>
       <main className="main-section">{children}</main>
       <footer className="foot nunito-sans color-white">
