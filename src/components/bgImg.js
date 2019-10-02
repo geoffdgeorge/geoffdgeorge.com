@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Header from './header';
 import BackgroundImage from 'gatsby-background-image';
 
-const BackgroundSection = ({siteTitle}) => (
+const UnstyledBackgroundSection = ({ siteTitle }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -27,10 +28,6 @@ const BackgroundSection = ({siteTitle}) => (
           Tag="header"
           className="header-container"
           fluid={imageData}
-          style={{
-            backgroundPosition: 'center center',
-            backgroundSize: 'cover',
-          }}
         >
           <Header siteTitle={siteTitle} />
         </BackgroundImage>
@@ -39,8 +36,13 @@ const BackgroundSection = ({siteTitle}) => (
   />
 );
 
-BackgroundSection.propTypes = {
+UnstyledBackgroundSection.propTypes = {
   siteTitle: PropTypes.string,
 };
+
+const BackgroundSection = styled(UnstyledBackgroundSection)`
+  background-position: center center;
+  background-size: cover
+`;
 
 export default BackgroundSection;
