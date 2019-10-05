@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { TransitionPortal } from 'gatsby-plugin-transition-link';
-import BackgroundSection from './bgImg'
+import BackgroundSection from './bgImg';
 
 const Container = styled.div`
   display: grid;
@@ -33,7 +33,7 @@ const Main = styled.main`
     grid-column-start: 2;
     padding-top: 0;
   }
-`
+`;
 
 const Footer = styled.footer`
   background-color: rgb(0, 141, 150);
@@ -73,7 +73,9 @@ const Layout = ({ children }) => {
       </TransitionPortal>
       <Main>{children}</Main>
       <Footer>
-        <FooterContent>Copyright © {new Date().getFullYear()} Geoff George</FooterContent>
+        <FooterContent>
+          Copyright © {new Date().getFullYear()} Geoff George
+        </FooterContent>
       </Footer>
     </Container>
   );
