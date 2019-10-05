@@ -5,6 +5,15 @@ import PropTypes from 'prop-types';
 import Header from './header';
 import BackgroundImage from 'gatsby-background-image';
 
+const StyledBackgroundImage = styled(BackgroundImage)`
+  @media (min-width: 825px) {
+    background-size: cover;
+    position: fixed;
+    width: 20rem;
+    height: 100vh;
+  }
+`;
+
 const UnstyledBackgroundSection = ({ siteTitle }) => (
   <StaticQuery
     query={graphql`
@@ -24,13 +33,9 @@ const UnstyledBackgroundSection = ({ siteTitle }) => (
       // Set ImageData.
       const imageData = data.placeholderImage.childImageSharp.fluid;
       return (
-        <BackgroundImage
-          Tag="header"
-          className="header-container"
-          fluid={imageData}
-        >
+        <StyledBackgroundImage Tag="header" fluid={imageData}>
           <Header siteTitle={siteTitle} />
-        </BackgroundImage>
+        </StyledBackgroundImage>
       );
     }}
   />
@@ -42,7 +47,7 @@ UnstyledBackgroundSection.propTypes = {
 
 const BackgroundSection = styled(UnstyledBackgroundSection)`
   background-position: center center;
-  background-size: cover
+  background-size: cover;
 `;
 
 export default BackgroundSection;
