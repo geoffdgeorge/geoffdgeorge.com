@@ -5,6 +5,8 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+const linkNames = ['About', 'Portfolio', 'CV', 'Blog', 'Contact'];
+
 const HeaderContent = styled.nav`
   background-color: rgba(84, 34, 0, 0.5);
   padding: 0.5rem 1rem;
@@ -146,8 +148,6 @@ const StyledHeaderImg = styled(Img)`
     height: 10rem;
   }
 `;
-
-const linkNames = ['About', 'Portfolio', 'CV', 'Blog', 'Contact'];
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
