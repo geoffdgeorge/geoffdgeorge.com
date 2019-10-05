@@ -147,6 +147,8 @@ const StyledHeaderImg = styled(Img)`
   }
 `;
 
+const linkNames = ['About', 'Portfolio', 'CV', 'Blog', 'Contact'];
+
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -170,56 +172,15 @@ const Header = ({ siteTitle }) => {
       />
       <HeaderTitle>{siteTitle}</HeaderTitle>
       <Nav>
-        <NavItem>
-          <StyledAniLink
-            swipe
-            direction="right"
-            duration={0.3}
-            to="/"
-          >
-            About
-          </StyledAniLink>
-        </NavItem>
-        <NavItem>
-          <StyledAniLink
-            swipe
-            direction="right"
-            duration={0.3}
-            to="/portfolio"
-          >
-            Portfolio
-          </StyledAniLink>
-        </NavItem>
-        <NavItem>
-          <StyledAniLink
-            swipe
-            direction="right"
-            duration={0.3}
-            to="/cv"
-          >
-            CV
-          </StyledAniLink>
-        </NavItem>
-        <NavItem>
-          <StyledAniLink
-            swipe
-            direction="right"
-            duration={0.3}
-            to="/blog"
-          >
-            Blog
-          </StyledAniLink>
-        </NavItem>
-        <NavItem>
-          <StyledAniLink
-            swipe
-            direction="right"
-            duration={0.3}
-            to="/contact"
-          >
-            Contact
-          </StyledAniLink>
-        </NavItem>
+        {linkNames.map(linkName => {
+          return (
+            <NavItem>
+              <StyledAniLink swipe direction="right" duration={0.3} to={linkNames.indexOf(linkName) === 0 ? `/` : `/${linkName.toLowerCase()}`}>
+                {linkName}
+              </StyledAniLink>
+            </NavItem>
+          );
+        })}
       </Nav>
     </HeaderContent>
   );
