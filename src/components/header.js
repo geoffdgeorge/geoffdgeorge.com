@@ -175,7 +175,7 @@ const Header = ({ siteTitle }) => {
         {linkNames.map(linkName => {
           return (
             <NavItem>
-              <StyledAniLink swipe direction="right" duration={0.3} to={linkNames.indexOf(linkName) === 0 ? `/` : `/${linkName.toLowerCase()}`}>
+              <StyledAniLink swipe direction="right" duration={0.3} to={linkNames.indexOf(linkName) === 0 ? `/` : `/${linkName.toLowerCase()}`} key={linkNames.indexOf(linkName)}>
                 {linkName}
               </StyledAniLink>
             </NavItem>
