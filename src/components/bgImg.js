@@ -14,7 +14,7 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   }
 `;
 
-const UnstyledBackgroundSection = ({ siteTitle }) => (
+const UnstyledBackgroundSection = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -34,16 +34,12 @@ const UnstyledBackgroundSection = ({ siteTitle }) => (
       const imageData = data.placeholderImage.childImageSharp.fluid;
       return (
         <StyledBackgroundImage Tag="header" fluid={imageData}>
-          <Header siteTitle={siteTitle} />
+          <Header/>
         </StyledBackgroundImage>
       );
     }}
   />
 );
-
-UnstyledBackgroundSection.propTypes = {
-  siteTitle: PropTypes.string,
-};
 
 const BackgroundSection = styled(UnstyledBackgroundSection)`
   background-position: center center;

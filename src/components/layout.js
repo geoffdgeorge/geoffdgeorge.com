@@ -56,20 +56,10 @@ const FooterContent = styled.p`
 `;
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <Container>
       <TransitionPortal>
-        <BackgroundSection siteTitle={data.site.siteMetadata.title} />
+        <BackgroundSection/>
       </TransitionPortal>
       <Main>{children}</Main>
       <Footer>

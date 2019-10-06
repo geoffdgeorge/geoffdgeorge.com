@@ -2,10 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import PropTypes from 'prop-types';
 import React from 'react';
-
-const linkNames = ['About', 'Portfolio', 'CV', 'Blog', 'Contact'];
 
 const HeaderContent = styled.nav`
   background-color: rgba(84, 34, 0, 0.5);
@@ -30,6 +27,24 @@ const HeaderContent = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+`;
+
+const StyledHeaderImg = styled(Img)`
+  width: 4rem;
+  height: 4rem;
+  border: 0.1rem rgb(196, 196, 196) solid;
+  border-radius: 50%;
+  justify-self: end;
+  grid-row: 1 / 3;
+
+  @media (min-width: 650px) {
+    grid-row: 1 / 2;
+  }
+
+  @media (min-width: 825px) {
+    width: 10rem;
+    height: 10rem;
   }
 `;
 
@@ -131,25 +146,7 @@ const StyledAniLink = styled(AniLink)`
   }
 `;
 
-const StyledHeaderImg = styled(Img)`
-  width: 4rem;
-  height: 4rem;
-  border: 0.1rem rgb(196, 196, 196) solid;
-  border-radius: 50%;
-  justify-self: end;
-  grid-row: 1 / 3;
-
-  @media (min-width: 650px) {
-    grid-row: 1 / 2;
-  }
-
-  @media (min-width: 825px) {
-    width: 10rem;
-    height: 10rem;
-  }
-`;
-
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(
@@ -164,18 +161,31 @@ const Header = ({ siteTitle }) => {
     }
   `);
 
+  const metadata = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+          navLinks
+        }
+      }
+    }
+  `);
+
+  const {title, navLinks} = metadata.site.siteMetadata;
+
   return (
     <HeaderContent>
       <StyledHeaderImg
         fluid={data.placeholderImage.childImageSharp.fluid}
         alt="A portrait photo of me"
       />
-      <HeaderTitle>{siteTitle}</HeaderTitle>
+      <HeaderTitle>{title}</HeaderTitle>
       <Nav>
-        {linkNames.map(linkName => {
+        {navLinks.map(linkName => {
           return (
-            <NavItem>
-              <StyledAniLink swipe direction="right" duration={0.3} to={linkNames.indexOf(linkName) === 0 ? `/` : `/${linkName.toLowerCase()}`} key={linkNames.indexOf(linkName)}>
+            <NavItem key={navLinks.indexOf(linkName)}>
+              <StyledAniLink swipe direction="right" duration={0.3} to={navLinks.indexOf(linkName) === 0 ? `/` : `/${linkName.toLowerCase()}`}>
                 {linkName}
               </StyledAniLink>
             </NavItem>
@@ -184,14 +194,6 @@ const Header = ({ siteTitle }) => {
       </Nav>
     </HeaderContent>
   );
-};
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Header;
