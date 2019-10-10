@@ -7,19 +7,15 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { TransitionPortal } from 'gatsby-plugin-transition-link';
 import BackgroundSection from './bgImg';
 
 const Container = styled.div`
   display: grid;
   grid-template: 1fr / 1fr;
-  padding-top: 5rem;
 
   @media (min-width: 825px) {
     grid-template: auto auto / 20rem 1fr;
-    padding-top: 0;
   }
 `;
 
@@ -27,6 +23,7 @@ const Main = styled.main`
   align-items: center;
   display: grid;
   justify-items: center;
+  min-height: calc(100vh - 5rem);
   padding: 2rem;
 
   @media (min-width: 825px) {
@@ -58,9 +55,7 @@ const FooterContent = styled.p`
 const Layout = ({ children }) => {
   return (
     <Container>
-      <TransitionPortal>
-        <BackgroundSection/>
-      </TransitionPortal>
+      <BackgroundSection />
       <Main>{children}</Main>
       <Footer>
         <FooterContent>

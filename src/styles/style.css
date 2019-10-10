@@ -5,22 +5,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-@media only screen and (min-width: 320px) {
-
-  .tl-edges {
-    display: grid;
-    grid-template: 1fr / 1fr;
-    min-height: 100vh;
-  }
-
-  .tl-wrapper {
-    display: grid;
-    grid-template: 1fr / 1fr;
-  }
-
-  .gatsby-plugin-transition-link-portal {
-    width: 100%;
-  }
-
-}

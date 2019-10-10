@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import Header from './header';
 import BackgroundImage from 'gatsby-background-image';
 
 const StyledBackgroundImage = styled(BackgroundImage)`
+  position: relative;
+
   @media (min-width: 825px) {
-    background-size: cover;
     position: fixed;
     width: 20rem;
     height: 100vh;
@@ -33,8 +33,14 @@ const UnstyledBackgroundSection = () => (
       // Set ImageData.
       const imageData = data.placeholderImage.childImageSharp.fluid;
       return (
-        <StyledBackgroundImage Tag="header" fluid={imageData}>
-          <Header/>
+        <StyledBackgroundImage
+          Tag="header"
+          fluid={imageData}
+          preserveStackingContext={true}
+          // Blank position set to override position default for gatsby-background-image
+          style={{ position: '' }}
+        >
+          <Header />
         </StyledBackgroundImage>
       );
     }}
