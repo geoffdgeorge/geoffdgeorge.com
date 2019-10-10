@@ -1,12 +1,22 @@
 import React from 'react';
-import Layout from '../components/layout';
+import styled from 'styled-components';
 import SEO from '../components/seo';
 
+const ContactContainer = styled.div`
+  display: grid;
+
+  @media (min-width: 825px) {
+    justify-items: center;
+    align-content: center;
+    height: 100vh;
+  }
+`;
+
 const Contact = () => (
-  <Layout>
+  <ContactContainer>
     <SEO title="Contact" />
-    <p className='link-section grid'>This is the Contact page</p>
-  </Layout>
+    <p className="link-section grid">This is the Contact page</p>
+  </ContactContainer>
 );
 
 export default Contact;

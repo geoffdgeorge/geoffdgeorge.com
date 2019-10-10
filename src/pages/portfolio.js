@@ -1,12 +1,22 @@
 import React from 'react';
-import Layout from '../components/layout';
+import styled from 'styled-components';
 import SEO from '../components/seo';
 
+const PortfolioContainer = styled.div`
+  display: grid;
+
+  @media (min-width: 825px) {
+    justify-items: center;
+    align-content: center;
+    height: 100vh;
+  }
+`;
+
 const Portfolio = () => (
-  <Layout>
+  <PortfolioContainer>
     <SEO title="Portfolio" />
     <p className="link-section grid">This is the Portfolio page</p>
-  </Layout>
+  </PortfolioContainer>
 );
 
 export default Portfolio;

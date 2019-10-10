@@ -1,13 +1,22 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import Layout from '../components/layout';
+import styled from 'styled-components';
 import SEO from '../components/seo';
 
+const CVContainer = styled.div`
+  display: grid;
+
+  @media (min-width: 825px) {
+    justify-items: center;
+    align-content: center;
+    height: 100vh;
+  }
+`;
+
 const CV = () => (
-  <Layout>
+  <CVContainer>
     <SEO title="CV" />
-    <p className='link-section grid'>This is the CV page</p>
-  </Layout>
+    <p className="link-section grid">This is the CV page</p>
+  </CVContainer>
 );
 
 export default CV;
