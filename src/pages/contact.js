@@ -4,6 +4,11 @@ import SEO from '../components/seo';
 
 const ContactContainer = styled.div`
   display: grid;
+  grid-template: 1fr / 1fr;
+`;
+
+const ContactContent = styled.div`
+  display: grid;
 
   @media (min-width: 825px) {
     justify-items: center;
@@ -14,8 +19,10 @@ const ContactContainer = styled.div`
 
 const Contact = () => (
   <ContactContainer>
-    <SEO title="Contact" />
-    <p className="link-section grid">This is the Contact page</p>
+    <ContactContent>
+      <SEO title="Contact" />
+      <p className="link-section grid">This is the Contact page</p>
+    </ContactContent>
   </ContactContainer>
 );
 
