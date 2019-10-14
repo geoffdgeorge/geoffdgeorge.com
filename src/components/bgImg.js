@@ -3,14 +3,15 @@ import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import Header from './header';
 import BackgroundImage from 'gatsby-background-image';
+import cssVars from '../styles/cssVars';
 
 const StyledBackgroundImage = styled(BackgroundImage)`
   position: relative;
 
-  @media (min-width: 825px) {
+  @media (min-width: ${cssVars.largeBreakPoint}) {
     position: fixed;
     width: 20rem;
-    height: 100vh;
+    min-height: 100vh;
   }
 `;
 

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/seo';
 import PortfolioItem from '../components/portfolioItem';
+import cssVars from '../styles/cssVars';
 
 const PortfolioContainer = styled.div`
   display: grid;
@@ -10,20 +11,16 @@ const PortfolioContainer = styled.div`
 `;
 
 const PortfolioContent = styled.div`
-  // display: grid;
+  display: grid;
+  grid-template: auto / 1fr;
+  min-width: 100%;
 
-  // @media (min-width: 825px) {
-  //   justify-items: center;
-  //   align-content: center;
-  //   height: 100vh;
-  // }
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    justify-items: center;
+    align-content: center;
+    min-height: 100vh;
+  }
 `;
-
-// const PortfolioTitle = styled.h2`
-
-// `;
-
-// const PortfolioItem = styled.div``;
 
 const Portfolio = () => {
   const data = useStaticQuery(graphql`

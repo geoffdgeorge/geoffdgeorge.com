@@ -9,12 +9,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import BackgroundSection from './bgImg';
+import cssVars from '../styles/cssVars';
 
 const Container = styled.div`
   display: grid;
   grid-template: 1fr / 1fr;
 
-  @media (min-width: 825px) {
+  @media (min-width: ${cssVars.largeBreakPoint}) {
     grid-template: auto auto / 20rem 1fr;
   }
 `;

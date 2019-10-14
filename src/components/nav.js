@@ -2,6 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import React from 'react';
+import cssVars from '../styles/cssVars';
 
 const NavUl = styled.ul`
   display: flex;
@@ -12,8 +13,8 @@ const NavUl = styled.ul`
   grid-column: 2 / 3;
   margin-top: 0.5rem;
 
-  @media (min-width: 650px) {
-    border-left: 0.2rem solid rgb(0, 141, 150);
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    border-left: 0.2rem solid ${cssVars.teal};
     grid-column: 3 / 4;
     margin-top: 0;
     height: 100%;
@@ -21,7 +22,7 @@ const NavUl = styled.ul`
     padding-left: 1rem;
   }
 
-  @media (min-width: 825px) {
+  @media (min-width: ${cssVars.largeBreakPoint}) {
     flex-direction: column;
     border-left: none;
     height: initial;
@@ -30,17 +31,17 @@ const NavUl = styled.ul`
 
 const NavItem = styled.li`
   color: rgb(255, 255, 255);
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: ${cssVars.nunitoSans};
   font-size: 0.8rem;
   font-weight: 400;
   list-style: none;
   text-align: center;
 
-  @media (min-width: 650px) {
+  @media (min-width: ${cssVars.midBreakPoint}) {
     font-size: 1rem;
   }
 
-  @media (min-width: 825px) {
+  @media (min-width: ${cssVars.largeBreakPoint}) {
     margin: 0 0 1rem;
     font-size: 1.2rem;
   }
@@ -63,7 +64,7 @@ const StyledAniLink = styled(AniLink)`
     transform: scale(1.2);
   }
 
-  @media (min-width: 825px) {
+  @media (min-width: ${cssVars.largeBreakPoint}) {
     :hover,
     :focus,
     :active {

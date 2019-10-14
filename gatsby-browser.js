@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import './src/styles/normalize.css'
-import './src/styles/style.css'
-import 'typeface-noto-serif-jp'
-import 'typeface-nunito-sans'
+import './src/styles/normalize.css';
+import './src/styles/style.css';
+import 'typeface-noto-serif-jp';
+import 'typeface-nunito-sans';
