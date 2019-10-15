@@ -7,8 +7,8 @@ module.exports = {
     portfolioItems: [
       {
         title: `Fridge2Table`,
-        awards: `Awards: First Place, Next Level Contest`,
-        toolsUsed: `Tools used: Express, MongoDB, Mongoose, Cron, Auth0, Axios, React Native, Expo, NativeBase`,
+        awards: `First Place, Next Level Contest`,
+        toolsUsed: `Express, MongoDB, Mongoose, Cron, Auth0, Axios, React Native, Expo, NativeBase`,
         description: `This is a full-stack mobile app built to track groceries by category and expiration date, complete with push notifications for products nearing expiration and secure user authentication via Auth0. As part of a team of four, I focused on authentication and our front-end design, built with React Native, Expo, and the NativeBase component library.`,
         githubLink: `https://github.com/Dreadpipe/fridge2table`,
         liveLink: `https://play.google.com/store/apps/details?id=com.dreamteamdesigns.fridge2table`,
@@ -18,7 +18,7 @@ module.exports = {
       {
         title: `Patellr`,
         awards: ``,
-        toolsUsed: `Tools used: Express, MySQL, Sequelize, Passport, Chart JS, Moment JS, Axios, Handlebars, CSS Grid`,
+        toolsUsed: `Express, MySQL, Sequelize, Passport, Chart JS, Moment JS, Axios, Handlebars, CSS Grid`,
         description: `This is a full-stack app built to track the progress of patients undergoing knee recovery. As part of a team of three, I focused largely on back-end routing and user authentication via Passport. I also worked on the CSS grid layout of the site's user page and the front-end integration of Chart JS, which displays a responsive graph of a signed-in user's pain and strength over time.`,
         githubLink: `https://github.com/geoffdgeorge/Patellr`,
         liveLink: `https://whispering-retreat-76401.herokuapp.com/`,
@@ -28,7 +28,7 @@ module.exports = {
       {
         title: `Fresh Farm Recipes`,
         awards: ``,
-        toolsUsed: `Tools used: jQuery, Bootstrap, Edamam API, USDA farmer's market API, Leaflet`,
+        toolsUsed: `jQuery, Bootstrap, Edamam API, USDA farmer's market API, Leaflet`,
         description: `I worked with a small team to build an app that provides recipe suggestions based on raw ingredients and helps users find nearby farmer's markets to procure those ingredients. My primary work was on the display and functionality of the site's Leaflet map and the results brought back from the USDA's farmer's market API.`,
         githubLink: `https://github.com/geoffdgeorge/Fresh-Farm-Recipes`,
         liveLink: `https://geoffdgeorge.github.io/Fresh-Farm-Recipes/`,
@@ -38,7 +38,7 @@ module.exports = {
       {
         title: `Multiplayer Online Game`,
         awards: ``,
-        toolsUsed: `Tools used: jQuery, Firebase`,
+        toolsUsed: `jQuery, Firebase`,
         description: `Using Firebase for back-end server processes, I built a multiplayer, online version of rock-paper-scissors, complete with sign-in and score-keeping functionality and a chat area for both players and observers.`,
         githubLink: `https://github.com/geoffdgeorge/RPS-Multiplayer`,
         liveLink: `https://geoffdgeorge.github.io/RPS-Multiplayer/`,
@@ -48,7 +48,7 @@ module.exports = {
       {
         title: 'Wanderer',
         awards: ``,
-        toolsUsed: `Tools used: Express, Axios`,
+        toolsUsed: `Express, Axios`,
         description: `This is a simple app built with Express routing on the back end and Vanilla JS on the front end to match stored users based on their survey scores. Users' scores are compared via a simple algorithm that adds up the differences of their quantifiable survey responses.`,
         githubLink: `https://github.com/geoffdgeorge/Wanderer`,
         liveLink: `https://rocky-tundra-11586.herokuapp.com/`,

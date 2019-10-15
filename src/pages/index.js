@@ -15,7 +15,6 @@ const IntroContent = styled.div`
   @media (min-width: ${cssVars.largeBreakPoint}) {
     justify-items: center;
     align-content: center;
-    height: 100vh;
   }
 `;
 

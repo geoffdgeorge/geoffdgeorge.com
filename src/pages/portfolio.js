@@ -13,13 +13,6 @@ const PortfolioContainer = styled.div`
 const PortfolioContent = styled.div`
   display: grid;
   grid-template: auto / 1fr;
-  min-width: 100%;
-
-  @media (min-width: ${cssVars.largeBreakPoint}) {
-    justify-items: center;
-    align-content: center;
-    min-height: 100vh;
-  }
 `;
 
 const Portfolio = () => {
@@ -42,16 +35,16 @@ const Portfolio = () => {
     }
   `);
 
-  const {portfolioItems} = data.site.siteMetadata;
+  const { portfolioItems } = data.site.siteMetadata;
 
   return (
     <PortfolioContainer>
+      <SEO title="Portfolio" />
       <PortfolioContent>
-        <SEO title="Portfolio" />
         {portfolioItems.map(item => {
           return (
             <PortfolioItem itemData={item} key={portfolioItems.indexOf(item)} />
-          )
+          );
         })}
       </PortfolioContent>
     </PortfolioContainer>

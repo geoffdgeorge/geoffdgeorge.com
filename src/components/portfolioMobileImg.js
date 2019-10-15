@@ -1,7 +1,12 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+
+const StyledImg = styled(Img)`
+width: 100%
+`;
 
 const PortfolioMobileImg = ({ path }) => (
   <StaticQuery
@@ -26,7 +31,7 @@ const PortfolioMobileImg = ({ path }) => (
       if (!image) {
         return null
       }
-      return <Img fluid={image.node.fluid} />
+      return <StyledImg fluid={image.node.fluid} />
     }}
   />
 )
