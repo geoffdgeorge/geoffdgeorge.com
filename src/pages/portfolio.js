@@ -13,6 +13,7 @@ const PortfolioContainer = styled.div`
 const PortfolioContent = styled.div`
   display: grid;
   grid-template: auto / 1fr;
+  grid-row-gap: 1rem;
 `;
 
 const Portfolio = () => {
