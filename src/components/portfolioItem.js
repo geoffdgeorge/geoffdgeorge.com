@@ -14,17 +14,21 @@ const PortfolioItemContent = styled.div`
   grid-template: auto / 1.7fr 1fr;
   justify-items: center;
   margin-bottom: 1rem;
+
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    grid-template: auto / 1fr 4fr 1fr 1fr
+  }
 `;
 
 const TitleContainer = styled.div`
-  min-width: 100%;
   grid-column: 1 / -1;
+  min-width: 100%;
   position: relative;
 
   :before {
     background-color: ${cssVars.brown};
     content: '';
-    height: 0.1rem;
+    height: 0.0625rem;
     min-width: 100%;
     position: absolute;
     top: 50%;
@@ -38,39 +42,56 @@ const Title = styled.h2`
   font-size: 1.2rem;
   font-weight: 200;
   margin: 0 auto;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   position: relative;
   width: max-content;
   z-index: 2;
 `;
 
 const BulletPoints = styled.div`
+  align-items: center;
+  display: grid;
   font-family: ${cssVars.notoSerifJP};
   font-size: 0.8rem;
   grid-column: 1 / 2;
   grid-row: 3 / 4;
+  grid-row-gap: 0.5rem;
+  grid-template: auto / 1fr 1fr;
+  justify-items: center;
+
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
 `;
 
 const Awards = styled.p`
-  margin-bottom: 0.5rem;
+  grid-column: 1 / -1;
 `;
 
-const ToolsUsed = styled.p``;
-
-const Icons = styled.div``;
+const ToolsUsed = styled.p`
+  grid-column: 1 / -1;
+`;
 
 const LinkIcon = styled(UnstyledLinkIcon)`
-
+  width: 1.8rem;
+  height: 1.8rem;
 `;
 
 const GitHubIcon = styled(UnstyledGitHubIcon)`
-
+  width: 1.8rem;
+  height: 1.8rem;
 `;
 
 const Description = styled.p`
   font-family: ${cssVars.notoSerifJP};
-  font-size: .9rem;
+  font-size: 0.9rem;
   grid-column: 1 / -1;
+
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
 `;
 
 // const PortfolioItem = styled.div``;
@@ -94,10 +115,8 @@ const PortfolioItem = ({ itemData }) => {
           <strong>Tools Used: </strong>
           {itemData.toolsUsed}
         </ToolsUsed>
-        <Icons>
-          <LinkIcon/>
-          <GitHubIcon/>
-        </Icons>
+        <LinkIcon />
+        <GitHubIcon />
       </BulletPoints>
       <Description>{itemData.description}</Description>
     </PortfolioItemContent>

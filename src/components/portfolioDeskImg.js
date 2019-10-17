@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import cssVars from '../styles/cssVars';
 
 const StyledImg = styled(Img)`
   border: 1px solid black;
   grid-column: 1 / -1;
   width: 100%;
+
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    grid-column: 1 / 2;
+  }
 `;
 
 const PortfolioDeskImg = ({ path }) => (
