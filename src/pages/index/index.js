@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import SEO from '../components/seo';
-import cssObj from '../styles/cssObj';
+import SEO from '../../components/seo';
+import cssObj from '../../styles/cssObj';
 
 const IntroContainer = styled.section`
   display: grid;

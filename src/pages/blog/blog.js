@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SEO from '../components/seo';
+import SEO from '../../components/seo';
 
 const BlogContainer = styled.div`
   display: grid;
