@@ -1,32 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import cssVars from '../styles/cssVars';
+import cssObj from '../../styles/cssObj';
 
 const StyledImg = styled(Img)`
-  border: 1px solid black;
-  grid-column: 1 / -1;
   width: 100%;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
-    grid-column: 1 / 2;
+  @media (min-width: ${cssObj.midBreakPoint}) {
+    grid-column: 3 / 4;
     grid-row: 3 / 4;
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
-    grid-column: 1 / -1;
+  @media (min-width: ${cssObj.largeBreakPoint}) {
+    grid-column: initial;
     grid-row: initial;
   }
     
-  @media (min-width: ${cssVars.xLargeBreakPoint}) {
-    grid-column: 1 / 2;
+  @media (min-width: ${cssObj.xLargeBreakPoint}) {
+    grid-column: 3 / 4;
     grid-row: 3 / 4;
   }
 `;
 
-const PortfolioDeskImg = ({ path }) => (
+const PortfolioMobileImg = ({ path }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -54,8 +52,8 @@ const PortfolioDeskImg = ({ path }) => (
   />
 );
 
-PortfolioDeskImg.propTypes = {
+PortfolioMobileImg.propTypes = {
   path: PropTypes.string,
 };
 
-export default PortfolioDeskImg;
+export default PortfolioMobileImg;

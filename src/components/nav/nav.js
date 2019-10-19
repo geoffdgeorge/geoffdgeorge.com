@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import React from 'react';
-import cssVars from '../styles/cssVars';
+import cssObj from '../../styles/cssObj';
 
 const NavUl = styled.ul`
   display: flex;
@@ -13,8 +13,8 @@ const NavUl = styled.ul`
   grid-column: 2 / 3;
   margin-top: 0.5rem;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
-    border-left: 0.2rem solid ${cssVars.teal};
+  @media (min-width: ${cssObj.midBreakPoint}) {
+    border-left: 0.2rem solid ${cssObj.teal};
     grid-column: 3 / 4;
     margin-top: 0;
     height: 100%;
@@ -22,7 +22,7 @@ const NavUl = styled.ul`
     padding-left: 1rem;
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     flex-direction: column;
     border-left: none;
     height: initial;
@@ -31,17 +31,17 @@ const NavUl = styled.ul`
 
 const NavItem = styled.li`
   color: rgb(255, 255, 255);
-  font-family: ${cssVars.nunitoSans};
+  font-family: ${cssObj.nunitoSans};
   font-size: 0.8rem;
   font-weight: 400;
   list-style: none;
   text-align: center;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
+  @media (min-width: ${cssObj.midBreakPoint}) {
     font-size: 1rem;
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     margin: 0 0 1rem;
     font-size: 1.2rem;
   }
@@ -64,7 +64,7 @@ const StyledAniLink = styled(AniLink)`
     transform: scale(1.2);
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     :hover,
     :focus,
     :active {

@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import Header from './header';
+import Header from '../header/header';
 import BackgroundImage from 'gatsby-background-image';
-import cssVars from '../styles/cssVars';
+import cssObj from '../../styles/cssObj';
 
 const StyledBackgroundImage = styled(BackgroundImage)`
   position: relative;
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     position: fixed;
     width: 20rem;
     min-height: 100vh;

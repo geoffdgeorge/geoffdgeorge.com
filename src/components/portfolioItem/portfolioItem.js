@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import PortfolioDeskImg from './portfolioDeskImg';
-import PortfolioMobileImg from './portfolioMobileImg';
-import cssVars from '../styles/cssVars';
-import UnstyledLinkIcon from '../images/svgs/link.svg';
-import UnstyledGitHubIcon from '../images/svgs/github.svg';
+import PortfolioDeskImg from '../portfolioDeskImg/portfolioDeskImg';
+import PortfolioMobileImg from '../portfolioMobileImg/portfolioMobileImg';
+import cssObj from '../../styles/cssObj';
+import UnstyledLinkIcon from '../../images/svgs/link.svg';
+import UnstyledGitHubIcon from '../../images/svgs/github.svg';
 
 const PortfolioItemContent = styled.div`
   align-items: center;
@@ -16,17 +16,17 @@ const PortfolioItemContent = styled.div`
   margin-bottom: 1rem;
   max-width: 18rem;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
+  @media (min-width: ${cssObj.midBreakPoint}) {
     grid-template: auto / 3fr 4fr 1.25fr;
     max-width: 35.6875rem;
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     grid-template: auto / 1.7fr 1fr;
     max-width: 18rem;
   }
 
-  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+  @media (min-width: ${cssObj.xLargeBreakPoint}) {
     grid-template: auto / 3fr 4fr 1.25fr;
     max-width: 35.6875rem;
   }
@@ -38,7 +38,7 @@ const TitleContainer = styled.div`
   position: relative;
 
   :before {
-    background-color: ${cssVars.brown};
+    background-color: ${cssObj.brown};
     content: '';
     height: 0.0625rem;
     min-width: 100%;
@@ -47,10 +47,10 @@ const TitleContainer = styled.div`
   }
 `;
 
-const Title = styled.h2`
+const titleStyle = `
   background-color: #fff;
-  color: ${cssVars.brown};
-  font-family: ${cssVars.nunitoSans};
+  color: ${cssObj.brown};
+  font-family: ${cssObj.nunitoSans};
   font-size: 1.2rem;
   font-weight: 200;
   margin: 0 auto;
@@ -59,7 +59,24 @@ const Title = styled.h2`
   width: max-content;
   z-index: 2;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
+  @media (min-width: ${cssObj.midBreakPoint}) {
+    font-size: 1.5rem;
+  }
+`;
+
+const Title = styled.h2`
+  background-color: #fff;
+  color: ${cssObj.brown};
+  font-family: ${cssObj.nunitoSans};
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  position: relative;
+  width: max-content;
+  z-index: 2;
+
+  @media (min-width: ${cssObj.midBreakPoint}) {
     font-size: 1.5rem;
   }
 `;
@@ -67,7 +84,7 @@ const Title = styled.h2`
 const BulletPoints = styled.div`
   align-items: center;
   display: grid;
-  font-family: ${cssVars.notoSerifJP};
+  font-family: ${cssObj.notoSerifJP};
   font-size: 0.8rem;
   grid-column: 1 / 2;
   grid-row: 3 / 4;
@@ -75,21 +92,21 @@ const BulletPoints = styled.div`
   grid-template: auto / 1fr 1fr;
   justify-items: center;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
+  @media (min-width: ${cssObj.midBreakPoint}) {
     grid-template: auto auto / 4fr 1fr 1fr;
     grid-column: 1 / -1;
     grid-row: 2 / 3;
     min-width: 100%;
   }
   
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     grid-template: auto / 1fr 1fr;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
     min-width: initial;
   }
   
-  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+  @media (min-width: ${cssObj.xLargeBreakPoint}) {
     grid-template: auto auto / 4fr 1fr 1fr;
     grid-column: 1 / -1;
     grid-row: 2 / 3;
@@ -103,17 +120,17 @@ const ToolsAndAwards = styled.div`
   grid-gap: 0.75rem;
   grid-template: auto / 1fr;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
+  @media (min-width: ${cssObj.midBreakPoint}) {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     grid-column: 1 / -1;
     grid-row: initial;
   }
 
-  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+  @media (min-width: ${cssObj.xLargeBreakPoint}) {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
   }
@@ -128,63 +145,63 @@ const ToolsUsed = styled.p`
 `;
 
 const LinkIcon = styled(UnstyledLinkIcon)`
-  fill: ${cssVars.brown};
+  fill: ${cssObj.brown};
   width: 1.8rem;
   height: 1.8rem;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
+  @media (min-width: ${cssObj.midBreakPoint}) {
     grid-row: 1 / 3;
     grid-column: 2 / 3;
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     grid-column: initial;
     grid-row: initial;
   }
 
-  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+  @media (min-width: ${cssObj.xLargeBreakPoint}) {
     grid-row: 1 / 3;
     grid-column: 2 / 3;
   }
 `;
 
 const GitHubIcon = styled(UnstyledGitHubIcon)`
-  fill: ${cssVars.brown};
+  fill: ${cssObj.brown};
   width: 1.8rem;
   height: 1.8rem;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
+  @media (min-width: ${cssObj.midBreakPoint}) {
     grid-row: 1 / 3;
     grid-column: 3 / 4;
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     grid-column: initial;
     grid-row: initial;
   }
 
-  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+  @media (min-width: ${cssObj.xLargeBreakPoint}) {
     grid-row: 1 / 3;
     grid-column: 3 / 4;
   }
 `;
 
 const Description = styled.p`
-  font-family: ${cssVars.notoSerifJP};
+  font-family: ${cssObj.notoSerifJP};
   font-size: 0.9rem;
   grid-column: 1 / -1;
 
-  @media (min-width: ${cssVars.midBreakPoint}) {
+  @media (min-width: ${cssObj.midBreakPoint}) {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     grid-column: 1 / -1;
     grid-row: initial;
   }
 
-  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+  @media (min-width: ${cssObj.xLargeBreakPoint}) {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }

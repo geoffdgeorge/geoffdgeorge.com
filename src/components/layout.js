@@ -8,14 +8,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import BackgroundSection from './bgImg';
-import cssVars from '../styles/cssVars';
+import BackgroundSection from './bgImg/bgImg';
+import cssObj from '../styles/cssObj';
 
 const Container = styled.div`
   display: grid;
   grid-template: 1fr / 1fr;
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     grid-template: auto auto / 20rem 1fr;
   }
 `;

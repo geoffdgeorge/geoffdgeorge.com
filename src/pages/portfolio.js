@@ -2,14 +2,14 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/seo';
-import PortfolioItem from '../components/portfolioItem';
-import cssVars from '../styles/cssVars';
+import PortfolioItem from '../components/portfolioItem/portfolioItem';
+import cssObj from '../styles/cssObj';
 
 const PortfolioContainer = styled.div`
   display: grid;
   grid-template: 1fr / 1fr;
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     min-height: 100vh;
     padding-top: 2rem;
   }

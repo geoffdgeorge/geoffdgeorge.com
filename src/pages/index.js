@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/seo';
-import cssVars from '../styles/cssVars';
+import cssObj from '../styles/cssObj';
 
 const IntroContainer = styled.section`
   display: grid;
   grid-template: 1fr / 1fr;
   max-width: 24rem;
   
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     min-height: 100vh;
     max-width: initial;
   }
@@ -18,15 +18,15 @@ const IntroContent = styled.div`
   display: grid;
   grid-auto-rows: min-content;
 
-  @media (min-width: ${cssVars.largeBreakPoint}) {
+  @media (min-width: ${cssObj.largeBreakPoint}) {
     justify-items: center;
     align-content: center;
   }
 `;
 
 const IntroTitle = styled.h2`
-  color: ${cssVars.teal};
-  font-family: ${cssVars.nunitoSans};
+  color: ${cssObj.teal};
+  font-family: ${cssObj.nunitoSans};
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
@@ -34,7 +34,7 @@ const IntroTitle = styled.h2`
 `;
 
 const IntroGraph = styled.p`
-  font-family: ${cssVars.notoSerifJP};
+  font-family: ${cssObj.notoSerifJP};
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.4rem;
@@ -46,7 +46,7 @@ const IntroGraph = styled.p`
 `;
 
 const IntroLink = styled.a`
-  color: ${cssVars.teal};
+  color: ${cssObj.teal};
   text-decoration: none;
 `;
 
