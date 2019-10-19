@@ -6,6 +6,12 @@ import cssVars from '../styles/cssVars';
 const IntroContainer = styled.section`
   display: grid;
   grid-template: 1fr / 1fr;
+  max-width: 24rem;
+  
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    min-height: 100vh;
+    max-width: initial;
+  }
 `;
 
 const IntroContent = styled.div`

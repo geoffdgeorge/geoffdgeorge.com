@@ -10,13 +10,25 @@ import UnstyledGitHubIcon from '../images/svgs/github.svg';
 const PortfolioItemContent = styled.div`
   align-items: center;
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 0.75rem;
   grid-template: auto / 1.7fr 1fr;
   justify-items: center;
   margin-bottom: 1rem;
+  max-width: 18rem;
 
   @media (min-width: ${cssVars.midBreakPoint}) {
-    grid-template: auto / 1fr 4fr 1fr 1fr
+    grid-template: auto / 3fr 4fr 1.25fr;
+    max-width: 35.6875rem;
+  }
+
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    grid-template: auto / 1.7fr 1fr;
+    max-width: 18rem;
+  }
+
+  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+    grid-template: auto / 3fr 4fr 1.25fr;
+    max-width: 35.6875rem;
   }
 `;
 
@@ -46,6 +58,10 @@ const Title = styled.h2`
   position: relative;
   width: max-content;
   z-index: 2;
+
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    font-size: 1.5rem;
+  }
 `;
 
 const BulletPoints = styled.div`
@@ -55,32 +71,102 @@ const BulletPoints = styled.div`
   font-size: 0.8rem;
   grid-column: 1 / 2;
   grid-row: 3 / 4;
-  grid-row-gap: 0.5rem;
+  grid-row-gap: 0.75rem;
   grid-template: auto / 1fr 1fr;
   justify-items: center;
 
   @media (min-width: ${cssVars.midBreakPoint}) {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
+    grid-template: auto auto / 4fr 1fr 1fr;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    min-width: 100%;
+  }
+  
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    grid-template: auto / 1fr 1fr;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    min-width: initial;
+  }
+  
+  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+    grid-template: auto auto / 4fr 1fr 1fr;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    min-width: 100%;
+  }
+`;
+
+const ToolsAndAwards = styled.div`
+  display: grid;
+  grid-column: 1 / -1;
+  grid-gap: 0.75rem;
+  grid-template: auto / 1fr;
+
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    grid-column: 1 / -1;
+    grid-row: initial;
+  }
+
+  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
   }
 `;
 
 const Awards = styled.p`
-  grid-column: 1 / -1;
+  text-align: center;
 `;
 
 const ToolsUsed = styled.p`
-  grid-column: 1 / -1;
+  text-align: center;
 `;
 
 const LinkIcon = styled(UnstyledLinkIcon)`
+  fill: ${cssVars.brown};
   width: 1.8rem;
   height: 1.8rem;
+
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+  }
+
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    grid-column: initial;
+    grid-row: initial;
+  }
+
+  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+  }
 `;
 
 const GitHubIcon = styled(UnstyledGitHubIcon)`
+  fill: ${cssVars.brown};
   width: 1.8rem;
   height: 1.8rem;
+
+  @media (min-width: ${cssVars.midBreakPoint}) {
+    grid-row: 1 / 3;
+    grid-column: 3 / 4;
+  }
+
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    grid-column: initial;
+    grid-row: initial;
+  }
+
+  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+    grid-row: 1 / 3;
+    grid-column: 3 / 4;
+  }
 `;
 
 const Description = styled.p`
@@ -90,7 +176,17 @@ const Description = styled.p`
 
   @media (min-width: ${cssVars.midBreakPoint}) {
     grid-column: 2 / 3;
-    grid-row: 1 / 3;
+    grid-row: 3 / 4;
+  }
+
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    grid-column: 1 / -1;
+    grid-row: initial;
+  }
+
+  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
   }
 `;
 
@@ -105,16 +201,18 @@ const PortfolioItem = ({ itemData }) => {
       <PortfolioDeskImg path={itemData.desktopPicRelPath} />
       <PortfolioMobileImg path={itemData.mobilePicRelPath} />
       <BulletPoints>
-        {itemData.awards ? (
-          <Awards>
-            <strong>Awards: </strong>
-            {itemData.awards}
-          </Awards>
-        ) : null}
-        <ToolsUsed>
-          <strong>Tools Used: </strong>
-          {itemData.toolsUsed}
-        </ToolsUsed>
+        <ToolsAndAwards>
+          {itemData.awards ? (
+            <Awards>
+              <strong>Awards: </strong>
+              {itemData.awards}
+            </Awards>
+          ) : null}
+          <ToolsUsed>
+            <strong>Tools Used: </strong>
+            {itemData.toolsUsed}
+          </ToolsUsed>
+        </ToolsAndAwards>
         <LinkIcon />
         <GitHubIcon />
       </BulletPoints>

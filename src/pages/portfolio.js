@@ -8,6 +8,11 @@ import cssVars from '../styles/cssVars';
 const PortfolioContainer = styled.div`
   display: grid;
   grid-template: 1fr / 1fr;
+
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    min-height: 100vh;
+    padding-top: 2rem;
+  }
 `;
 
 const PortfolioContent = styled.div`

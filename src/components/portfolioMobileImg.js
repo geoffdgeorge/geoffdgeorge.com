@@ -9,7 +9,18 @@ const StyledImg = styled(Img)`
   width: 100%;
 
   @media (min-width: ${cssVars.midBreakPoint}) {
-    grid-column: 4 / 5;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+  }
+
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    grid-column: initial;
+    grid-row: initial;
+  }
+    
+  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
   }
 `;
 

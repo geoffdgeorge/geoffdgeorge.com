@@ -3,8 +3,9 @@ const cssVars = {
   brown: `rgb(84, 34, 0)`,
   nunitoSans: `'Nunito Sans', sans-serif`,
   notoSerifJP: `'Noto Serif JP', serif`,
-  largeBreakPoint: `825px`,
   midBreakPoint: `650px`,
+  largeBreakPoint: `825px`,
+  xLargeBreakPoint: `970px`,
 };
 
 export default cssVars;

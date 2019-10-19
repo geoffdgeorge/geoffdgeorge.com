@@ -12,6 +12,17 @@ const StyledImg = styled(Img)`
 
   @media (min-width: ${cssVars.midBreakPoint}) {
     grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  @media (min-width: ${cssVars.largeBreakPoint}) {
+    grid-column: 1 / -1;
+    grid-row: initial;
+  }
+    
+  @media (min-width: ${cssVars.xLargeBreakPoint}) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
   }
 `;
 
