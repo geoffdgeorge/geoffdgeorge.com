@@ -5,7 +5,7 @@ const layoutCss = {
     display: grid;
     grid-template: 1fr / 1fr;
   
-    @media (min-width: ${cssObj.largeBreakPoint}) {
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
       grid-template: auto auto / 20rem 1fr;
     }`,
   main: `
@@ -20,14 +20,14 @@ const layoutCss = {
       padding-top: 0;
     }`,
   footer: `
-    background-color: rgb(0, 141, 150);
-    border-top: 0.2rem solid rgb(84, 34, 0);
+    align-items: center;
+    background-color: ${cssObj.vars.teal};
+    border-top: 0.2rem solid ${cssObj.vars.brown};
     color: rgb(255, 255, 255);
     display: grid;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: ${cssObj.vars.nunitoSans};
     height: 3rem;
     justify-items: center;
-    align-items: center;
   
     @media (min-width: 825px) {
       grid-column: 2 / -1;
