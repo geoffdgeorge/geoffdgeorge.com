@@ -1,1 +1,1 @@
-import cssObj from '../styles/cssObj';
+import cssObj from '../../styles/cssObj';
