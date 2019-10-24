@@ -15,7 +15,7 @@ const layoutCss = {
     min-height: calc(100vh - 5rem);
     padding: 2rem;
   
-    @media (min-width: 825px) {
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
       grid-column-start: 2;
       padding-top: 0;
     }`,
@@ -29,7 +29,7 @@ const layoutCss = {
     height: 3rem;
     justify-items: center;
   
-    @media (min-width: 825px) {
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
       grid-column: 2 / -1;
     }`,
   footerContent: `
