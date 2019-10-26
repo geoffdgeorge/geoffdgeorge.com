@@ -1,0 +1,1 @@
+import cssObj from '../cssObj';
