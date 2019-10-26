@@ -5,8 +5,7 @@ const portfolioMobileImgCss = {
     width: 100%;
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
-        grid-column: 3 / 4;
-        grid-row: 3 / 4;
+        ${cssObj.mixins.gridColsRows(3, 4, 3, 4)}
     }
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
@@ -15,8 +14,7 @@ const portfolioMobileImgCss = {
     }
         
     @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-        grid-column: 3 / 4;
-        grid-row: 3 / 4;
+        ${cssObj.mixins.gridColsRows(3, 4, 3, 4)}
     }`,
 };
 

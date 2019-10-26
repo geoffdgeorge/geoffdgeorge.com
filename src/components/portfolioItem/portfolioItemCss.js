@@ -2,11 +2,9 @@ import cssObj from '../../styles/cssObj';
 
 const portfolioItemCss = {
   portfolioItemContent: `
-    align-items: center;
-    display: grid;
+    ${cssObj.mixins.gridCentered}
     grid-gap: 0.75rem;
     grid-template: auto / 1.7fr 1fr;
-    justify-items: center;
     margin-bottom: 1rem;
     max-width: 18rem;
 
@@ -46,41 +44,36 @@ const portfolioItemCss = {
     margin: 0 auto;
     padding: 0 0.5rem;
     position: relative;
-    width: max-content;
+    max-width: max-content;
     z-index: 2;
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
         font-size: 1.5rem;
     }`,
   bulletPoints: `
-    align-items: center;
-    display: grid;
+    ${cssObj.mixins.gridCentered}
     font-family: ${cssObj.vars.notoSerifJP};
     font-size: 0.8rem;
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
+    ${cssObj.mixins.gridColsRows(1, 2, 3, 4)}
     grid-row-gap: 0.75rem;
     grid-template: auto / 1fr 1fr;
-    justify-items: center;
+
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(1, -1, 2, 3)}
         grid-template: auto auto / 4fr 1fr 1fr;
-        grid-column: 1 / -1;
-        grid-row: 2 / 3;
         min-width: 100%;
     }
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(1, 2, 3, 4)}
         grid-template: auto / 1fr 1fr;
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
         min-width: initial;
     }
 
     @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(1, -1, 2, 3)}
         grid-template: auto auto / 4fr 1fr 1fr;
-        grid-column: 1 / -1;
-        grid-row: 2 / 3;
         min-width: 100%;
     }`,
   toolsAndAwards: `
@@ -90,8 +83,7 @@ const portfolioItemCss = {
     grid-template: auto / 1fr;
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
-        grid-column: 1 / 2;
-        grid-row: 1 / 3;
+        ${cssObj.mixins.gridColsRows(1, 2, 1, 3)}
     }
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
@@ -100,8 +92,7 @@ const portfolioItemCss = {
     }
 
     @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-        grid-column: 1 / 2;
-        grid-row: 1 / 3;
+        ${cssObj.mixins.gridColsRows(1, 2, 1, 3)}
     }`,
   awards: `
     text-align: center;`,
@@ -113,8 +104,7 @@ const portfolioItemCss = {
     height: 1.8rem;
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
-        grid-row: 1 / 3;
-        grid-column: 2 / 3;
+        ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
     }
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
@@ -123,17 +113,15 @@ const portfolioItemCss = {
     }
 
     @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-        grid-row: 1 / 3;
-        grid-column: 2 / 3;
+        ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
     }`,
   gitHubIcon: `
     fill: ${cssObj.vars.brown};
-    width: 1.8rem;
     height: 1.8rem;
+    width: 1.8rem;
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
-        grid-row: 1 / 3;
-        grid-column: 3 / 4;
+        ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
     }
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
@@ -142,8 +130,7 @@ const portfolioItemCss = {
     }
 
     @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-        grid-row: 1 / 3;
-        grid-column: 3 / 4;
+        ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
     }`,
   description: `
     font-family: ${cssObj.vars.notoSerifJP};
@@ -151,8 +138,7 @@ const portfolioItemCss = {
     grid-column: 1 / -1;
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
-        grid-column: 2 / 3;
-        grid-row: 3 / 4;
+        ${cssObj.mixins.gridColsRows(2, 3, 3, 4)}
     }
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
@@ -161,8 +147,7 @@ const portfolioItemCss = {
     }
 
     @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-        grid-column: 2 / 3;
-        grid-row: 3 / 4;
+        ${cssObj.mixins.gridColsRows(2, 3, 3, 4)}
     }`,
 };
 

@@ -9,9 +9,7 @@ const layoutCss = {
       grid-template: auto auto / 20rem 1fr;
     }`,
   main: `
-    align-items: center;
-    display: grid;
-    justify-items: center;
+    ${cssObj.mixins.gridCentered}
     min-height: calc(100vh - 5rem);
     padding: 2rem;
   
@@ -20,14 +18,12 @@ const layoutCss = {
       padding-top: 0;
     }`,
   footer: `
-    align-items: center;
+    ${cssObj.mixins.gridCentered}
     background-color: ${cssObj.vars.teal};
     border-top: 0.2rem solid ${cssObj.vars.brown};
     color: rgb(255, 255, 255);
-    display: grid;
     font-family: ${cssObj.vars.nunitoSans};
     height: 3rem;
-    justify-items: center;
   
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
       grid-column: 2 / -1;

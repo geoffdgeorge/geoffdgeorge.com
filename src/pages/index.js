@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SEO from '../components/seo';
 import indexCss from '../styles/pageCss/indexCss';
 
+
 const IntroContainer = styled.section`
   ${indexCss.introContainer}
 `;

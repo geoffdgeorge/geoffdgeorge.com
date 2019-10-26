@@ -6,27 +6,27 @@ const indexCss = {
     grid-template: 1fr / 1fr;
     max-width: 24rem;
     
-    @media (min-width: ${cssObj.largeBreakPoint}) {
-        min-height: 100vh;
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
         max-width: initial;
+        min-height: 100vh;
     }`,
   introContent: `
     display: grid;
     grid-auto-rows: min-content;
 
-    @media (min-width: ${cssObj.largeBreakPoint}) {
-        justify-items: center;
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
         align-content: center;
+        justify-items: center;
     }`,
   introTitle: `
-    color: ${cssObj.teal};
-    font-family: ${cssObj.nunitoSans};
+    color: ${cssObj.vars.teal};
+    font-family: ${cssObj.vars.nunitoSans};
     font-size: 2rem;
     font-weight: 400;
-    text-align: center;
-    margin: 0 0 1rem 0;`,
+    margin: 0 0 1rem 0;
+    text-align: center;`,
   introGraph: `
-    font-family: ${cssObj.notoSerifJP};
+    font-family: ${cssObj.vars.notoSerifJP};
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.4rem;
@@ -36,7 +36,7 @@ const indexCss = {
         margin-bottom: 0;
     }`,
   introLink: `
-    color: ${cssObj.teal};
+    color: ${cssObj.vars.teal};
     text-decoration: none;`,
 };
 

@@ -7,8 +7,7 @@ const portfolioDeskImgCss = {
     width: 100%;
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
+        ${cssObj.mixins.gridColsRows(1, 2, 3, 4)}
     }
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
@@ -17,8 +16,7 @@ const portfolioDeskImgCss = {
     }
         
     @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
+        ${cssObj.mixins.gridColsRows(1, 2, 3, 4)}
     }`,
 };
 

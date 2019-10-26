@@ -1,16 +1,27 @@
 const cssVars = {
-  teal: `rgb(0, 141, 150)`,
   brown: `rgb(84, 34, 0)`,
+  largeBreakPoint: `825px`,
+  midBreakPoint: `650px`,
   nunitoSans: `'Nunito Sans', sans-serif`,
   notoSerifJP: `'Noto Serif JP', serif`,
-  midBreakPoint: `650px`,
-  largeBreakPoint: `825px`,
+  teal: `rgb(0, 141, 150)`,
   xLargeBreakPoint: `970px`,
 };
 
 const cssObj = {
+  mixins: {
+    gridCentered: `
+    align-items: center;
+    display: grid;
+    justify-items: center;`,
+    gridColsRows: (col1, col2, row1, row2) => {
+      return `
+        grid-column: ${col1} / ${col2};
+        grid-row: ${row1} / ${row2};
+      `;
+    },
+  },
   vars: cssVars,
-  mixins: {},
 };
 
 export default cssObj;

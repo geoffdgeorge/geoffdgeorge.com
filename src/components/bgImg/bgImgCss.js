@@ -5,9 +5,9 @@ const bgImgCss = {
     position: relative;
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+        min-height: 100vh;
         position: fixed;
         width: 20rem;
-        min-height: 100vh;
     }`,
 };
 
