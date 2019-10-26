@@ -1,53 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/seo';
-import cssObj from '../styles/cssObj';
+import indexCss from '../styles/pageCss/indexCss';
 
 const IntroContainer = styled.section`
-  display: grid;
-  grid-template: 1fr / 1fr;
-  max-width: 24rem;
-  
-  @media (min-width: ${cssObj.largeBreakPoint}) {
-    min-height: 100vh;
-    max-width: initial;
-  }
+  ${indexCss.introContainer}
 `;
 
 const IntroContent = styled.div`
-  display: grid;
-  grid-auto-rows: min-content;
-
-  @media (min-width: ${cssObj.largeBreakPoint}) {
-    justify-items: center;
-    align-content: center;
-  }
+  ${indexCss.introContent}
 `;
 
 const IntroTitle = styled.h2`
-  color: ${cssObj.teal};
-  font-family: ${cssObj.nunitoSans};
-  font-size: 2rem;
-  font-weight: 400;
-  text-align: center;
-  margin: 0 0 1rem 0;
+  ${indexCss.introTitle}
 `;
 
 const IntroGraph = styled.p`
-  font-family: ${cssObj.notoSerifJP};
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.4rem;
-  margin-bottom: 1rem;
-
-  :last-child {
-    margin-bottom: 0;
-  }
+  ${indexCss.introGraph}
 `;
 
 const IntroLink = styled.a`
-  color: ${cssObj.teal};
-  text-decoration: none;
+  ${indexCss.introLink}
 `;
 
 const IndexPage = () => (
