@@ -3,27 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import cssObj from '../../styles/cssObj';
+import portfolioDeskImgCss from './portfolioDeskImgCss';
 
 const StyledImg = styled(Img)`
-  border: 1px solid black;
-  grid-column: 1 / -1;
-  width: 100%;
-
-  @media (min-width: ${cssObj.midBreakPoint}) {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-  }
-
-  @media (min-width: ${cssObj.largeBreakPoint}) {
-    grid-column: 1 / -1;
-    grid-row: initial;
-  }
-    
-  @media (min-width: ${cssObj.xLargeBreakPoint}) {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-  }
+  ${portfolioDeskImgCss.styledImg}
 `;
 
 const PortfolioDeskImg = ({ path }) => (

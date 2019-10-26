@@ -3,25 +3,10 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import cssObj from '../../styles/cssObj';
+import portfolioMobileImgCss from './portfolioMobileImgCss';
 
 const StyledImg = styled(Img)`
-  width: 100%;
-
-  @media (min-width: ${cssObj.midBreakPoint}) {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
-  }
-
-  @media (min-width: ${cssObj.largeBreakPoint}) {
-    grid-column: initial;
-    grid-row: initial;
-  }
-    
-  @media (min-width: ${cssObj.xLargeBreakPoint}) {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
-  }
+  ${portfolioMobileImgCss.styledImg}
 `;
 
 const PortfolioMobileImg = ({ path }) => (
