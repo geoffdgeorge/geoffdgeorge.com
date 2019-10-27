@@ -12,6 +12,10 @@ const layoutCss = {
     ${cssObj.mixins.gridCentered}
     min-height: calc(100vh - 5rem);
     padding: 2rem;
+
+    .tl-edges {
+      overflow-x: visible;
+    }
   
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
       grid-column-start: 2;

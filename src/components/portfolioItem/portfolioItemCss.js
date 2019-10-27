@@ -50,6 +50,56 @@ const portfolioItemCss = {
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
         font-size: 1.5rem;
     }`,
+  deskImgLink: `
+    grid-column: 1 / -1;
+    min-width: 100%;
+    transition: ${cssObj.vars.standardTransition};
+
+    :active,
+    :focus,
+    :hover {
+        box-shadow: ${cssObj.vars.dropShadow};
+        filter: grayscale(100%);
+    }
+
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(1, 2, 3, 4)}
+    }
+
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+        grid-column: 1 / -1;
+        grid-row: initial;
+    }
+        
+    @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(1, 2, 3, 4)}
+    }`,
+  mobileImgLink: `
+    min-width: 100%;
+    transition: ${cssObj.vars.standardTransition};
+
+    :active,
+    :focus,
+    :hover {
+        filter: grayscale(100%);
+
+        img {
+            filter: drop-shadow(${cssObj.vars.dropShadow})
+        }
+    }
+
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(3, 4, 3, 4)}
+    }
+
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+        grid-column: initial;
+        grid-row: initial;
+    }
+        
+    @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(3, 4, 3, 4)}
+    }`,
   bulletPoints: `
     ${cssObj.mixins.gridCentered}
     font-family: ${cssObj.vars.notoSerifJP};
@@ -57,7 +107,6 @@ const portfolioItemCss = {
     ${cssObj.mixins.gridColsRows(1, 2, 3, 4)}
     grid-row-gap: 0.75rem;
     grid-template: auto / 1fr 1fr;
-
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
         ${cssObj.mixins.gridColsRows(1, -1, 2, 3)}
@@ -98,40 +147,60 @@ const portfolioItemCss = {
     text-align: center;`,
   toolsUsed: `
     text-align: center;`,
+  liveLink: `
+    :active,
+    :focus,
+    :hover {
+        > svg {
+            filter: drop-shadow(${cssObj.vars.dropShadow});
+            fill: ${cssObj.vars.teal};
+        }
+    }
+
+        @media (min-width: ${cssObj.vars.midBreakPoint}) {
+            ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
+        }
+
+        @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+            grid-column: initial;
+            grid-row: initial;
+        }
+
+        @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
+            ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
+        }`,
   linkIcon: `
     fill: ${cssObj.vars.brown};
     width: 1.8rem;
     height: 1.8rem;
-
-    @media (min-width: ${cssObj.vars.midBreakPoint}) {
-        ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
+    transition: ${cssObj.vars.standardTransition};`,
+  gitHubLink: `
+    :active,
+    :focus,
+    :hover {
+        > svg {
+            filter: drop-shadow(${cssObj.vars.dropShadow});
+            fill: ${cssObj.vars.teal};
+        }
     }
+    
+        @media (min-width: ${cssObj.vars.midBreakPoint}) {
+            ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
+        }
 
-    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
-        grid-column: initial;
-        grid-row: initial;
-    }
+        @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+            grid-column: initial;
+            grid-row: initial;
+        }
 
-    @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-        ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
-    }`,
+        @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
+            ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
+        }`,
   gitHubIcon: `
     fill: ${cssObj.vars.brown};
     height: 1.8rem;
     width: 1.8rem;
-
-    @media (min-width: ${cssObj.vars.midBreakPoint}) {
-        ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
-    }
-
-    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
-        grid-column: initial;
-        grid-row: initial;
-    }
-
-    @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-        ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
-    }`,
+    transition: ${cssObj.vars.standardTransition};`,
   description: `
     font-family: ${cssObj.vars.notoSerifJP};
     font-size: 0.9rem;

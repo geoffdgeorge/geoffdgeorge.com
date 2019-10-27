@@ -19,6 +19,14 @@ const Title = styled.h2`
   ${portfolioItemCss.title}
 `;
 
+const DeskImgLink = styled.a`
+  ${portfolioItemCss.deskImgLink}
+`;
+
+const MobileImgLink = styled.a`
+  ${portfolioItemCss.mobileImgLink}
+`;
+
 const BulletPoints = styled.div`
   ${portfolioItemCss.bulletPoints}
 `;
@@ -35,8 +43,16 @@ const ToolsUsed = styled.p`
   ${portfolioItemCss.toolsUsed}
 `;
 
+const LiveLink = styled.a`
+  ${portfolioItemCss.liveLink}
+`;
+
 const LinkIcon = styled(UnstyledLinkIcon)`
   ${portfolioItemCss.linkIcon}
+`;
+
+const GitHubLink = styled.a`
+  ${portfolioItemCss.gitHubLink}
 `;
 
 const GitHubIcon = styled(UnstyledGitHubIcon)`
@@ -53,8 +69,12 @@ const PortfolioItem = ({ itemData }) => {
       <TitleContainer>
         <Title>{itemData.title}</Title>
       </TitleContainer>
-      <PortfolioDeskImg path={itemData.desktopPicRelPath} />
-      <PortfolioMobileImg path={itemData.mobilePicRelPath} />
+      <DeskImgLink href={itemData.liveLink} target="_blank">
+        <PortfolioDeskImg path={itemData.desktopPicRelPath} />
+      </DeskImgLink>
+      <MobileImgLink href={itemData.liveLink} target="_blank">
+        <PortfolioMobileImg path={itemData.mobilePicRelPath} />
+      </MobileImgLink>
       <BulletPoints>
         <ToolsAndAwards>
           {itemData.awards ? (
@@ -68,8 +88,12 @@ const PortfolioItem = ({ itemData }) => {
             {itemData.toolsUsed}
           </ToolsUsed>
         </ToolsAndAwards>
-        <LinkIcon />
-        <GitHubIcon />
+        <LiveLink href={itemData.liveLink} target="_blank">
+          <LinkIcon />
+        </LiveLink>
+        <GitHubLink href={itemData.githubLink} target="_blank">
+          <GitHubIcon />
+        </GitHubLink>
       </BulletPoints>
       <Description>{itemData.description}</Description>
     </PortfolioItemContent>

@@ -32,7 +32,7 @@ const PortfolioMobileImg = ({ path }) => (
       if (!image) {
         return null;
       }
-      return <StyledImg fluid={image.node.fluid} />;
+      return <StyledImg fluid={image.node.fluid} style={{overflow: 'visible'}} />;
     }}
   />
 );
