@@ -4,6 +4,7 @@ const indexCss = {
   introContainer: `
     display: grid;
     grid-template: 1fr / 1fr;
+    margin: 0 auto;
     max-width: 24rem;
     
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
@@ -26,10 +27,7 @@ const indexCss = {
     margin: 0 0 1rem 0;
     text-align: center;`,
   introGraph: `
-    font-family: ${cssObj.vars.notoSerifJP};
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.4rem;
+    ${cssObj.mixins.graphSettings}
     margin-bottom: 1rem;
 
     :last-child {

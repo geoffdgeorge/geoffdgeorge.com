@@ -204,6 +204,7 @@ const portfolioItemCss = {
   description: `
     font-family: ${cssObj.vars.notoSerifJP};
     font-size: 0.9rem;
+    line-height: 1.1rem;
     grid-column: 1 / -1;
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {

@@ -14,7 +14,7 @@ const layoutCss = {
     padding: 2rem;
 
     .tl-edges {
-      overflow-x: visible;
+      min-width: 100%;
     }
   
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
