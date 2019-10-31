@@ -13,6 +13,10 @@ const PortfolioContent = styled.div`
   ${portfolioCss.portfolioContent}
 `;
 
+const PortfolioTitle = styled.h2`
+  ${portfolioCss.portfolioTitle}
+`;
+
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -39,6 +43,7 @@ const Portfolio = () => {
     <PortfolioContainer>
       <SEO title="Portfolio" />
       <PortfolioContent>
+        <PortfolioTitle>Portfolio</PortfolioTitle>
         {portfolioItems.map(item => {
           return (
             <PortfolioItem itemData={item} key={portfolioItems.indexOf(item)} />

@@ -11,6 +11,10 @@ const ContactContent = styled.div`
   ${contactCss.contactContent}
 `;
 
+const ContactTitle = styled.h2`
+  ${contactCss.contactTitle}
+`;
+
 const ContactGraph = styled.p`
   ${contactCss.contactGraph}
 `;
@@ -39,6 +43,7 @@ const Contact = () => (
   <ContactContainer>
     <ContactContent>
       <SEO title="Contact" />
+      <ContactTitle>Contact</ContactTitle>
       <ContactGraph>I'd love to work with you! (Or just grab a coffee and kibitz about code.) Drop me a line here, or connect with me on social media.</ContactGraph>
       <HiddenLabel for='name'>Name</HiddenLabel>
       <NameInput placeholder='Name' id='name'/>

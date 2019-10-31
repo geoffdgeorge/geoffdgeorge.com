@@ -14,6 +14,8 @@ const portfolioCss = {
     grid-template: auto / 1fr;
     grid-row-gap: 1rem;
     justify-items: center`,
+  portfolioTitle: `
+    ${cssObj.mixins.sectionTitle}`,
 };
 
 export default portfolioCss;

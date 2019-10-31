@@ -3,17 +3,26 @@ import cssObj from '../../styles/cssObj';
 const contactCss = {
   contactContainer: `
     display: grid;
-    grid-template: 1fr / 1fr;`,
+    grid-template: 1fr / 1fr;
+    justify-items: center`,
   contactContent: `
     display: grid;
     grid-gap: 1rem;
-    grid-template: auto / 1fr 1fr;
+    grid-template: auto / 1fr;
+    justify-items: center;
 
-    @media (min-width: 825px) {
-        justify-items: center;
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+      grid-template: auto / 1fr 1fr;
+    }
+
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
         align-content: center;
         height: 100vh;
+        max-width: 45rem;
     }`,
+  contactTitle: `
+    ${cssObj.mixins.sectionTitle}
+    grid-column: 1 / -1;`,
   contactGraph: `
     ${cssObj.mixins.graphSettings}
     grid-column: 1 / -1;

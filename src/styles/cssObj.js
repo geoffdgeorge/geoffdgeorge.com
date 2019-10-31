@@ -32,6 +32,20 @@ const cssObj = {
       border: .1rem solid rgb(196, 196, 196);
       padding: .5rem;
       `,
+    sectionTitle: `
+      border: .5rem double ${cssVars.teal};
+      color: ${cssVars.teal};
+      font-family: ${cssVars.nunitoSans};
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: .0625rem;
+      margin: 0 0 1rem 0;
+      padding: 1rem 2.25rem;
+      text-align: center;
+      
+      @media (min-width: ${cssVars.midBreakPoint}) {
+        padding: 1rem 6rem
+      }`,
     visuallyHidden: `
       border: 0;  
       clip: rect(0 0 0 0); 
