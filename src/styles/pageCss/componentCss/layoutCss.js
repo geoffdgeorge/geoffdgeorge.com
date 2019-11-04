@@ -1,4 +1,4 @@
-import cssObj from '../styles/cssObj';
+import cssObj from '../../cssObj';
 
 const layoutCss = {
   container: `

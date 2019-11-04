@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import PortfolioDeskImg from '../portfolioDeskImg/portfolioDeskImg';
 import PortfolioMobileImg from '../portfolioMobileImg/portfolioMobileImg';
-import portfolioItemCss from './portfolioItemCss';
+import portfolioItemCss from '../../styles/pageCss/componentCss/portfolioItemCss';
 import UnstyledLinkIcon from '../../images/svgs/link.svg';
 import UnstyledGitHubIcon from '../../images/svgs/github.svg';
 

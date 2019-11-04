@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import BackgroundSection from './bgImg/bgImg';
-import layoutCss from './layoutCss';
+import layoutCss from '../styles/pageCss/componentCss/layoutCss';
 
 const Container = styled.div`
   ${layoutCss.container}

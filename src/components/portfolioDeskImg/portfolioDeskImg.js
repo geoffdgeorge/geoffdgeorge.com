@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import portfolioDeskImgCss from './portfolioDeskImgCss';
+import portfolioDeskImgCss from '../../styles/pageCss/componentCss/portfolioDeskImgCss';
 
 const StyledImg = styled(Img)`
   ${portfolioDeskImgCss.styledImg}

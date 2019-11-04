@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Nav from '../nav/nav';
 import React from 'react';
-import headerCss from './headerCss';
+import headerCss from '../../styles/pageCss/componentCss/headerCss';
 
 const HeaderContent = styled.nav`
   ${headerCss.headerContent}
