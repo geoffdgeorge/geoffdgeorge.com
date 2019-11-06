@@ -1,5 +1,4 @@
 import cssObj from '../../cssObj';
-import { deflate } from 'zlib';
 
 const navCss = {
   navUl: `

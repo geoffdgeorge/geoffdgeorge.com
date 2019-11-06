@@ -1,5 +1,3 @@
-import cssObj from '../../cssObj';
-
 const portfolioDeskImgCss = {
   styledImg: `
     border: 1px solid black;
