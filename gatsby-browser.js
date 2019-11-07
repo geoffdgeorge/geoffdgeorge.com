@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 
 import './src/styles/normalize.css';
+import './node_modules/prismjs/themes/prism-solarizedlight.css';
 import './src/styles/style.css';
 import 'typeface-noto-serif-jp';
 import 'typeface-nunito-sans';

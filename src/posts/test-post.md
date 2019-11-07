@@ -1,6 +1,7 @@
 ---
 title: Test Post 1
-date: 11-3-2019
+subhead: This is the subhead for the post. Sometimes it might be long.
+date: 2019-11-03
 slug: post-1
 key: 1
 ---
@@ -9,7 +10,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Diam vulputate ut pharetra sit amet aliquam id diam. Nunc scelerisque viverra mauris in. In fermentum posuere urna nec tincidunt praesent semper feugiat. Turpis egestas sed tempus urna et pharetra pharetra massa. Nec dui nunc mattis enim ut. Pellentesque elit eget gravida cum. Nisl tincidunt eget nullam non nisi est sit. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Mauris ultrices eros in cursus turpis massa. Massa sapien faucibus et molestie. Sed felis eget velit aliquet sagittis. Sit amet commodo nulla facilisi nullam vehicula. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Amet venenatis urna cursus eget nunc scelerisque viverra. Neque egestas congue quisque egestas diam in arcu. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Lectus mauris ultrices eros in cursus turpis. At lectus urna duis convallis convallis tellus id interdum. Viverra orci sagittis eu volutpat odio facilisis mauris sit.
 
-## Secondary Header
+### Secondary Header
 
 Elementum curabitur vitae nunc sed velit dignissim sodales. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam. Amet luctus venenatis lectus magna fringilla urna. Mauris augue neque gravida in fermentum et. Eget duis at tellus at. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. At augue eget arcu dictum varius duis. Malesuada nunc vel risus commodo viverra. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Arcu non odio euismod lacinia at quis risus sed vulputate. Congue nisi vitae suscipit tellus mauris a diam. Id consectetur purus ut faucibus. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis. Ultrices vitae auctor eu augue ut lectus arcu. Dolor sit amet consectetur adipiscing elit ut. Facilisi morbi tempus iaculis urna id.
 
