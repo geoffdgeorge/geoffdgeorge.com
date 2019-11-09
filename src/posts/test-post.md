@@ -3,6 +3,7 @@ title: Test Post 1
 subhead: This is the subhead for the post. Sometimes it might be long.
 date: 2019-11-03
 slug: post-1
+bannerImg: ../images/blog/banners/computer__reed-pearson.jpg
 key: 1
 ---
 

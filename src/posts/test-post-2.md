@@ -3,6 +3,7 @@ title: Test Post 2
 subhead: This is the subhead for the post. Sometimes it might be long.
 date: 2019-11-04
 slug: post-2
+bannerImg: ../images/blog/banners/pencils__joanna-kosinska.jpg
 key: 2
 ---
 

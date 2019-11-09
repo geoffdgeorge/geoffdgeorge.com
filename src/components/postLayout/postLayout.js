@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 import postLayoutCss from '../../styles/pageCss/componentCss/postLayoutCss';
 
 const PostContainer = styled.div`
@@ -36,6 +37,7 @@ const Post = props => {
         <PostHeader>{markdownRemark.frontmatter.title}</PostHeader>
         <PostSubhead>{markdownRemark.frontmatter.subhead}</PostSubhead>
         <PostDate>{markdownRemark.frontmatter.date}</PostDate>
+        <Img fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid}></Img>
         <PostMain
           dangerouslySetInnerHTML={{
             __html: markdownRemark.html,
@@ -57,6 +59,13 @@ export const query = graphql`
         slug
         subhead
         title
+        bannerImg {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
