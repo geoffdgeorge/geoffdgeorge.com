@@ -10,7 +10,7 @@ const portfolioItemCss = {
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
         grid-template: auto / 3fr 4fr 1.25fr;
-        max-width: 35.6875rem;
+        max-width: ${cssObj.vars.maxContentWidth};
     }
     
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
@@ -20,7 +20,7 @@ const portfolioItemCss = {
 
     @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
         grid-template: auto / 3fr 4fr 1.25fr;
-        max-width: 35.6875rem;
+        max-width: ${cssObj.vars.maxContentWidth};
     }`,
   titleContainer: `
     grid-column: 1 / -1;

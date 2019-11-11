@@ -2,6 +2,7 @@ const cssVars = {
   brown: `rgb(84, 34, 0)`,
   dropShadow: `.1rem .1rem .1rem rgb(158, 158, 158)`,
   largeBreakPoint: `825px`,
+  maxContentWidth: `35.6875rem`,
   midBreakPoint: `650px`,
   nunitoSans: `'Nunito Sans', sans-serif`,
   notoSerifJP: `'Noto Serif JP', serif`,
@@ -12,6 +13,14 @@ const cssVars = {
 
 const cssObj = {
   mixins: {
+    activeHoverFocus: tempLiteral => {
+      return `
+        :active,
+        :hover,
+        :focus {
+          ${tempLiteral}
+        }`;
+    },
     graphSettings: `
       font-family: ${cssVars.notoSerifJP};
       font-size: 1rem;

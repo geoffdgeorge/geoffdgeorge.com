@@ -1,42 +1,64 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 import SEO from '../components/seo';
+import blogCss from '../styles/pageCss/blogCss';
 
 const BlogContainer = styled.div`
-  display: grid;
-  grid-template: 1fr / 1fr;
+  ${blogCss.blogContainer}
 `;
 
 const BlogContent = styled.div`
-  display: grid;
-
-  @media (min-width: 825px) {
-    justify-items: center;
-    align-content: center;
-    height: 100vh;
-  }
+  ${blogCss.blogContent}
 `;
 
-const BlogHeader = styled.h2``;
+const BlogHeader = styled.h2`
+  ${blogCss.blogHeader}
+`;
 
-const PostContainer = styled.div``;
+const PostContainer = styled(AniLink)`
+  ${blogCss.postContainer}
+`;
 
-const PostTitle = styled.h3``;
+const PostTitle = styled.h3`
+  ${blogCss.postTitle}
+`;
 
-const PostDate = styled.p``;
+const PostDate = styled.p`
+  ${blogCss.postDate}
+`;
 
-const PostLink = styled(Link)``;
+const StyledImg = styled(Img)`
+  ${blogCss.styledImg}
+`;
+
+const PostExcerpt = styled.p`
+  ${blogCss.postExcerpt}
+`;
+
+const PostLink = styled.span`
+  ${blogCss.postLink}
+`;
 
 const blogDataQuery = graphql`
   query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       nodes {
+        excerpt(pruneLength: 190)
         frontmatter {
           title
-          date
+          date(formatString: "MMMM DD, YYYY")
           slug
           key
+          bannerImg {
+            childImageSharp {
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
@@ -54,15 +76,23 @@ const Blog = () => {
     <BlogContainer>
       <BlogContent>
         <SEO title="Blog" />
-        <BlogHeader>This is the Blog page</BlogHeader>
+        <BlogHeader>Blog</BlogHeader>
         {nodes.map(node => {
           return (
-            <PostContainer key={node.frontmatter.key}>
-              <PostTitle>{node.frontmatter.title}</PostTitle>
+            <PostContainer
+              swipe
+              direction="left"
+              duration={0.3}
+              to={`/blog/${node.frontmatter.slug}`}
+              key={node.frontmatter.key}
+            >
               <PostDate>{node.frontmatter.date}</PostDate>
-              <PostLink to={`/blog/${node.frontmatter.slug}`}>
-                Read More
-              </PostLink>
+              <PostTitle>{node.frontmatter.title}</PostTitle>
+              <StyledImg
+                fluid={node.frontmatter.bannerImg.childImageSharp.fluid}
+              ></StyledImg>
+              <PostExcerpt>{node.excerpt}</PostExcerpt>
+              <PostLink>Read More</PostLink>
             </PostContainer>
           );
         })}

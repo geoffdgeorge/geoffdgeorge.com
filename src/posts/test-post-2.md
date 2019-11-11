@@ -15,9 +15,9 @@ Diam vulputate ut pharetra sit amet aliquam id diam. Nunc scelerisque viverra ma
 
 Elementum curabitur vitae nunc sed velit dignissim sodales. Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam. Amet luctus venenatis lectus magna fringilla urna. Mauris augue neque gravida in fermentum et. Eget duis at tellus at. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. At augue eget arcu dictum varius duis. Malesuada nunc vel risus commodo viverra. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Arcu non odio euismod lacinia at quis risus sed vulputate. Congue nisi vitae suscipit tellus mauris a diam. Id consectetur purus ut faucibus. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis. Ultrices vitae auctor eu augue ut lectus arcu. Dolor sit amet consectetur adipiscing elit ut. Facilisi morbi tempus iaculis urna id.
 
-- Item one
-- Item two
-- Item three
+* Item one
+* Item two
+* Item three
 
 ```CSS
 p {

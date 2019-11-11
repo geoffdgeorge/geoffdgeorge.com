@@ -4,6 +4,7 @@ const indexCss = {
   introContainer: `
     display: grid;
     grid-template: 1fr / 1fr;
+    justify-items: center;
     margin: 0 auto;
     max-width: 24rem;
     
@@ -14,6 +15,7 @@ const indexCss = {
   introContent: `
     display: grid;
     grid-auto-rows: min-content;
+    max-width: ${cssObj.vars.maxContentWidth}
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
         align-content: center;

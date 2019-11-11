@@ -16,7 +16,7 @@ const layoutCss = {
     .tl-edges {
       min-width: 100%;
     }
-  
+
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
       grid-column-start: 2;
       padding-top: 0;

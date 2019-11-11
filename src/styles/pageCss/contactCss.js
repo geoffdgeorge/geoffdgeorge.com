@@ -18,7 +18,7 @@ const contactCss = {
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
         align-content: center;
         height: 100vh;
-        max-width: 45rem;
+        max-width: ${cssObj.vars.maxContentWidth} ;
     }`,
   contactTitle: `
     ${cssObj.mixins.sectionTitle}
@@ -32,11 +32,11 @@ const contactCss = {
   nameInput: `
     ${cssObj.mixins.inputSettings}
     ${cssObj.mixins.graphSettings}
-    min-width: 100%`,
+    width: 100%`,
   emailInput: `
     ${cssObj.mixins.inputSettings}
     ${cssObj.mixins.graphSettings}
-    min-width: 100%`,
+    width: 100%`,
   messageTextArea: `
     ${cssObj.mixins.inputSettings}
     ${cssObj.mixins.graphSettings}
@@ -50,15 +50,14 @@ const contactCss = {
     font-size: 1.2rem;
     padding: .7rem;
     justify-self: center;
-    background-color: rgb(0, 141, 150);
-    color: rgb(255, 255, 255);
-    transition: box-shadow .1s linear;
+    background-color: ${cssObj.vars.teal};
+    color: #FFF;
+    transition: all .3s ease-in-out;
     
-    :active,
-    :hover,
-    :focus {
+    ${cssObj.mixins.activeHoverFocus(`
+      background-color: ${cssObj.vars.brown};
       box-shadow: ${cssObj.vars.dropShadow};
-    }`,
+    `)}`,
 };
 
 export default contactCss;
