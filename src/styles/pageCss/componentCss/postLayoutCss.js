@@ -28,11 +28,22 @@ const postLayoutCss = {
     font-weight: 800;
     margin-bottom: 1.5rem`,
   bannerImg: `
-    margin-bottom: 1rem;
+    margin-bottom: .3rem;
   `,
+  bannerImgCap: `
+    color: ${cssObj.vars.brown};
+    font-family: ${cssObj.vars.nunitoSans};
+    font-size: .8rem;
+    margin: 0 auto 1rem;
+    max-width: max-content;`,
   postMain: `
     p, pre[class*="language-"], ul, ol, h3, h4, h5, h6 {
         margin-bottom: 1rem;
+    }
+
+    a {
+      color: ${cssObj.vars.teal};
+      text-decoration: none;
     }
 
     ul, ol {

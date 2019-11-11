@@ -28,6 +28,10 @@ const BannerImg = styled(Img)`
   ${postLayoutCss.bannerImg}
 `;
 
+const BannerImgCap = styled.figcaption`
+  ${postLayoutCss.bannerImgCap}
+`;
+
 const PostMain = styled.div`
   ${postLayoutCss.postMain}
 `;
@@ -44,6 +48,7 @@ const Post = props => {
         <BannerImg
           fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid}
         ></BannerImg>
+        <BannerImgCap>{markdownRemark.frontmatter.bannerImgCap}</BannerImgCap>
         <PostMain
           dangerouslySetInnerHTML={{
             __html: markdownRemark.html,
@@ -65,6 +70,7 @@ export const query = graphql`
         slug
         subhead
         title
+        bannerImgCap
         bannerImg {
           childImageSharp {
             fluid(maxWidth: 1000) {
