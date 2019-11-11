@@ -46,7 +46,7 @@ const blogDataQuery = graphql`
   query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       nodes {
-        excerpt(pruneLength: 190)
+        excerpt(pruneLength: 115)
         frontmatter {
           title
           date(formatString: "MMMM DD, YYYY")

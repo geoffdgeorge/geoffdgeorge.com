@@ -45,11 +45,11 @@ const Contact = () => (
       <SEO title="Contact" />
       <ContactTitle>Contact</ContactTitle>
       <ContactGraph>I'd love to work with you! (Or just grab a coffee and kibitz about code.) Drop me a line here, or connect with me on social media.</ContactGraph>
-      <HiddenLabel for='name'>Name</HiddenLabel>
+      <HiddenLabel htmlFor='name'>Name</HiddenLabel>
       <NameInput placeholder='Name' id='name'/>
-      <HiddenLabel for='email'>Email</HiddenLabel>
+      <HiddenLabel htmlFor='email'>Email</HiddenLabel>
       <EmailInput placeholder='Email' id='email'/>
-      <HiddenLabel for='message'>Message</HiddenLabel>
+      <HiddenLabel htmlFor='message'>Message</HiddenLabel>
       <MessageTextArea placeholder='Message' id='message'/>
       <SubmitButton type='button'>Submit</SubmitButton>
     </ContactContent>

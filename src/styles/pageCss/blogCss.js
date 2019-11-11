@@ -14,7 +14,7 @@ const blogCss = {
   blogContent: `
     display: grid;
     justify-items: center;
-    grid-template: 1fr / 1fr;
+    grid-template:  min-content / 1fr;
     grid-gap: 1rem;
     max-width: ${cssObj.vars.maxContentWidth};`,
   blogHeader: `
@@ -26,9 +26,14 @@ const blogCss = {
     grid-gap: .5rem;
     padding-top: 1rem;
     text-decoration: none;
+    
+    :last-child {
+      border-bottom: 0.0625rem solid ${cssObj.vars.brown};
+      padding-bottom: 1rem;
+    }
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
-      grid-template: 1fr / 2fr 3fr;
+      grid-template: min-content / 3fr 4fr;
     }`,
   postTitle: `
     font-family: ${cssObj.vars.notoSerifJP};

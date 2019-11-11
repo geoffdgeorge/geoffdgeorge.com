@@ -17,15 +17,19 @@ const PostHeader = styled.h2`
 `;
 
 const PostSubhead = styled.span`
-    ${postLayoutCss.postSubhead}
+  ${postLayoutCss.postSubhead}
 `;
 
 const PostDate = styled.span`
-    ${postLayoutCss.postDate}
+  ${postLayoutCss.postDate}
+`;
+
+const BannerImg = styled(Img)`
+  ${postLayoutCss.bannerImg}
 `;
 
 const PostMain = styled.div`
-    ${postLayoutCss.postMain}
+  ${postLayoutCss.postMain}
 `;
 
 const Post = props => {
@@ -37,7 +41,9 @@ const Post = props => {
         <PostHeader>{markdownRemark.frontmatter.title}</PostHeader>
         <PostSubhead>{markdownRemark.frontmatter.subhead}</PostSubhead>
         <PostDate>{markdownRemark.frontmatter.date}</PostDate>
-        <Img fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid}></Img>
+        <BannerImg
+          fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid}
+        ></BannerImg>
         <PostMain
           dangerouslySetInnerHTML={{
             __html: markdownRemark.html,

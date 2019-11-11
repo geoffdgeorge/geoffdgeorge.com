@@ -16,13 +16,17 @@ const postLayoutCss = {
     font-size: 1.3rem;
     font-style: italic;
     font-weight: 500;
-    margin-bottom: 1.5rem;`,
+    margin-bottom: .5rem;`,
   postDate: `
+    color: ${cssObj.vars.teal};
     display: block;
-    font-family: ${cssObj.vars.notoSerifJP};
+    font-family: ${cssObj.vars.nunitoSans};
     font-size: .8rem;
     font-weight: 800;
     margin-bottom: 1.5rem`,
+  bannerImg: `
+    margin-bottom: 1rem;
+  `,
   postMain: `
     p, pre[class*="language-"], ul, ol, h3, h4, h5, h6 {
         margin-bottom: 1rem;
