@@ -2,7 +2,7 @@ import cssObj from '../../cssObj';
 
 const navCss = {
   navUl: `
-    align-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

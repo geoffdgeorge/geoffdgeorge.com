@@ -34,6 +34,7 @@ const blogCss = {
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
       grid-template: min-content / 3fr 4fr;
+      max-height: 16rem;
     }`,
   postTitle: `
     font-family: ${cssObj.vars.notoSerifJP};

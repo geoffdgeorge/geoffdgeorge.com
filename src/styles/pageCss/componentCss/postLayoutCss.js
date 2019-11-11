@@ -3,7 +3,10 @@ import cssObj from '../../cssObj';
 const postLayoutCss = {
   postContainer: `
     ${cssObj.mixins.gridCentered}
-    padding-top: 2rem;`,
+
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+      padding-top: 2rem;
+    }`,
   postContent: `
     max-width: 35.6875rem;`,
   postHeader: `
