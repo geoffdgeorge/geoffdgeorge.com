@@ -24,6 +24,7 @@ And in that spirit, maybe it'd be good to put together a little punch list right
 * Smoother transition animations between pages with React Spring?
 * Get some notes from a few folks with an actual eye for design
 * Give the site another once-over for accessibility
+* Put together ReadMe
 
 That's a good start! And now, if anyone's reading this, I've got another set of eyes over my shoulder, to get me moving.
 

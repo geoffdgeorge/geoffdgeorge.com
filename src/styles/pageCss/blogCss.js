@@ -20,10 +20,14 @@ const blogCss = {
   blogHeader: `
     ${cssObj.mixins.sectionTitle}`,
   postContainer: `
+    align-content: center;
     border-top: 0.0625rem solid ${cssObj.vars.brown};
     color: #000;
     display: grid;
+    height: max-content;
     grid-gap: .5rem;
+    grid-template: min-content / 1fr;
+
     padding-top: 1rem;
     text-decoration: none;
     
@@ -34,7 +38,6 @@ const blogCss = {
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
       grid-template: min-content / 3fr 4fr;
-      max-height: 16rem;
     }`,
   postTitle: `
     font-family: ${cssObj.vars.notoSerifJP};
@@ -55,7 +58,6 @@ const blogCss = {
   postExcerpt: `
     ${cssObj.mixins.graphSettings}`,
   postLink: `
-    align-self: end;
     color: ${cssObj.vars.teal};
     font-family: ${cssObj.vars.nunitoSans};
     font-size: 1.2rem;
@@ -63,6 +65,10 @@ const blogCss = {
     max-width: max-content;
     text-decoration: none;
     transition: ${cssObj.vars.standardTransition};
+
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+      align-self: end;
+    }
     
     ${cssObj.mixins.activeHoverFocus(`
       color: ${cssObj.vars.brown};
