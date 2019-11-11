@@ -45,25 +45,16 @@ const navCss = {
     display: inline-block;
     text-decoration: none;
     text-shadow: 0 0 0.3rem rgb(150, 88, 45);
-    transition-duration: 0.3s;
-    transition-property: transform;
-    -webkit-transition-duration: 0.3s;
-    -webkit-transition-property: transform;
+    transition: ${cssObj.vars.standardTransition};
 
-    :hover,
-    :focus,
-    :active {
+    ${cssObj.mixins.activeHoverFocus(`
         transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-    }
+    `)}
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
-        :hover,
-        :focus,
-        :active {
+        ${cssObj.mixins.activeHoverFocus(`
             transform: scale(1.3);
-            -webkit-transform: scale(1.3);
-        }
+        `)}
     }`,
 };
 

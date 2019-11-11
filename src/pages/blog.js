@@ -67,9 +67,6 @@ const blogDataQuery = graphql`
 
 const Blog = () => {
   const blogData = useStaticQuery(blogDataQuery);
-
-  console.log(blogData);
-
   const { nodes } = blogData.allMarkdownRemark;
 
   return (

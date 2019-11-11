@@ -10,15 +10,13 @@ const blogCss = {
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
       padding-top: 2rem;
-    }
-    `,
+    }`,
   blogContent: `
     display: grid;
     justify-items: center;
     grid-template: 1fr / 1fr;
     grid-gap: 1rem;
-    max-width: ${cssObj.vars.maxContentWidth};
-  `,
+    max-width: ${cssObj.vars.maxContentWidth};`,
   blogHeader: `
     ${cssObj.mixins.sectionTitle}`,
   postContainer: `
@@ -31,8 +29,7 @@ const blogCss = {
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
       grid-template: 1fr / 2fr 3fr;
-    }
-  `,
+    }`,
   postTitle: `
     font-family: ${cssObj.vars.notoSerifJP};
     font-size: 1.75rem;
@@ -48,25 +45,22 @@ const blogCss = {
     display: block;
     grid-row: 3 / 5;
     object-fit: cover;
-    object-position: center center;
-  `,
+    object-position: center center;`,
   postExcerpt: `
-    ${cssObj.mixins.graphSettings}
-  `,
+    ${cssObj.mixins.graphSettings}`,
   postLink: `
     align-self: end;
     color: ${cssObj.vars.teal};
     font-family: ${cssObj.vars.nunitoSans};
     font-size: 1.2rem;
     font-weight: 600;
+    max-width: max-content;
     text-decoration: none;
     transition: ${cssObj.vars.standardTransition};
     
-    :active,
-    :focus,
-    :hover {
+    ${cssObj.mixins.activeHoverFocus(`
       color: ${cssObj.vars.brown};
-    }`,
+    `)}`,
 };
 
 export default blogCss;

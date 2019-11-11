@@ -55,12 +55,10 @@ const portfolioItemCss = {
     min-width: 100%;
     transition: ${cssObj.vars.standardTransition};
 
-    :active,
-    :focus,
-    :hover {
+    ${cssObj.mixins.activeHoverFocus(`
         box-shadow: ${cssObj.vars.dropShadow};
         filter: grayscale(100%);
-    }
+    `)}
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
         ${cssObj.mixins.gridColsRows(1, 2, 3, 4)}
@@ -78,15 +76,13 @@ const portfolioItemCss = {
     min-width: 100%;
     transition: ${cssObj.vars.standardTransition};
 
-    :active,
-    :focus,
-    :hover {
+    ${cssObj.mixins.activeHoverFocus(`
         filter: grayscale(100%);
 
         img {
             filter: drop-shadow(${cssObj.vars.dropShadow})
         }
-    }
+    `)}
 
     @media (min-width: ${cssObj.vars.midBreakPoint}) {
         ${cssObj.mixins.gridColsRows(3, 4, 3, 4)}
@@ -148,54 +144,50 @@ const portfolioItemCss = {
   toolsUsed: `
     text-align: center;`,
   liveLink: `
-    :active,
-    :focus,
-    :hover {
+    ${cssObj.mixins.activeHoverFocus(`
         > svg {
             filter: drop-shadow(${cssObj.vars.dropShadow});
             fill: ${cssObj.vars.teal};
         }
+    `)}
+
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
     }
 
-        @media (min-width: ${cssObj.vars.midBreakPoint}) {
-            ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
-        }
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+        grid-column: initial;
+        grid-row: initial;
+    }
 
-        @media (min-width: ${cssObj.vars.largeBreakPoint}) {
-            grid-column: initial;
-            grid-row: initial;
-        }
-
-        @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-            ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
-        }`,
+    @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(2, 3, 1, 3)}
+    }`,
   linkIcon: `
     fill: ${cssObj.vars.brown};
     width: 1.8rem;
     height: 1.8rem;
     transition: ${cssObj.vars.standardTransition};`,
   gitHubLink: `
-    :active,
-    :focus,
-    :hover {
+    ${cssObj.mixins.activeHoverFocus(`
         > svg {
             filter: drop-shadow(${cssObj.vars.dropShadow});
             fill: ${cssObj.vars.teal};
         }
-    }
+    `)}
     
-        @media (min-width: ${cssObj.vars.midBreakPoint}) {
-            ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
-        }
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
+    }
 
-        @media (min-width: ${cssObj.vars.largeBreakPoint}) {
-            grid-column: initial;
-            grid-row: initial;
-        }
+    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+        grid-column: initial;
+        grid-row: initial;
+    }
 
-        @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
-            ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
-        }`,
+    @media (min-width: ${cssObj.vars.xLargeBreakPoint}) {
+        ${cssObj.mixins.gridColsRows(3, 4, 1, 3)}
+    }`,
   gitHubIcon: `
     fill: ${cssObj.vars.brown};
     height: 1.8rem;

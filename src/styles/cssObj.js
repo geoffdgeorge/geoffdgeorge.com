@@ -39,8 +39,7 @@ const cssObj = {
     inputSettings: `
       background-color: rgb(243, 243, 243);
       border: .1rem solid rgb(196, 196, 196);
-      padding: .5rem;
-      `,
+      padding: .5rem;`,
     sectionTitle: `
       border: .5rem double ${cssVars.teal};
       color: ${cssVars.teal};
