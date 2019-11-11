@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/seo';
-import contactCss from '../styles/pageCss/contactCss'
+import contactCss from '../styles/pageCss/contactCss';
 
 const ContactContainer = styled.div`
   ${contactCss.contactContainer}
@@ -41,22 +41,30 @@ const MessageTextArea = styled.textarea`
 
 const SubmitButton = styled.button`
   ${contactCss.submitButton}
-`; 
+`;
 
 const Contact = () => (
   <ContactContainer>
     <ContactContent>
       <SEO title="Contact" />
       <ContactTitle>Contact</ContactTitle>
-      <ContactGraph>I'd love to work with you! (Or just grab a coffee and kibitz about code.) Drop me a line here, or connect with me on social media.</ContactGraph>
-      <ContactForm data-netlify='true' netlify-honeypot='bot-field' method='POST' name='contact'>
-        <input type='hidden' name='bot-field'></input>
-        <HiddenLabel htmlFor='name'>Name</HiddenLabel>
-        <NameInput placeholder='Name' id='name' name='name' />
-        <HiddenLabel htmlFor='email'>Email</HiddenLabel>
-        <EmailInput placeholder='Email' id='email' name='email'/>
-        <HiddenLabel htmlFor='message'>Message</HiddenLabel>
-        <MessageTextArea placeholder='Message' id='message' name='message'/>
+      <ContactGraph>
+        I'd love to work with you! (Or just grab a coffee and kibitz about
+        code.) Drop me a line here, or connect with me on social media.
+      </ContactGraph>
+      <ContactForm
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        method="POST"
+        name="contact"
+      >
+        <input type="hidden" name="bot-field" />
+        <HiddenLabel htmlFor="name">Name</HiddenLabel>
+        <NameInput placeholder="Name" id="name" name="name" />
+        <HiddenLabel htmlFor="email">Email</HiddenLabel>
+        <EmailInput placeholder="Email" id="email" name="email" />
+        <HiddenLabel htmlFor="message">Message</HiddenLabel>
+        <MessageTextArea placeholder="Message" id="message" name="message" />
         <SubmitButton>Submit</SubmitButton>
       </ContactForm>
     </ContactContent>
