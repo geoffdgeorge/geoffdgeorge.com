@@ -19,6 +19,10 @@ const ContactGraph = styled.p`
   ${contactCss.contactGraph}
 `;
 
+const ContactForm = styled.form`
+  ${contactCss.contactForm}
+`;
+
 const HiddenLabel = styled.label`
   ${contactCss.hiddenLabel}
 `;
@@ -45,13 +49,16 @@ const Contact = () => (
       <SEO title="Contact" />
       <ContactTitle>Contact</ContactTitle>
       <ContactGraph>I'd love to work with you! (Or just grab a coffee and kibitz about code.) Drop me a line here, or connect with me on social media.</ContactGraph>
-      <HiddenLabel htmlFor='name'>Name</HiddenLabel>
-      <NameInput placeholder='Name' id='name'/>
-      <HiddenLabel htmlFor='email'>Email</HiddenLabel>
-      <EmailInput placeholder='Email' id='email'/>
-      <HiddenLabel htmlFor='message'>Message</HiddenLabel>
-      <MessageTextArea placeholder='Message' id='message'/>
-      <SubmitButton type='button'>Submit</SubmitButton>
+      <ContactForm data-netlify='true' netlify-honeypot='bot-field' method='POST' name='contact'>
+        <input type='hidden' name='bot-field'></input>
+        <HiddenLabel htmlFor='name'>Name</HiddenLabel>
+        <NameInput placeholder='Name' id='name' name='name' />
+        <HiddenLabel htmlFor='email'>Email</HiddenLabel>
+        <EmailInput placeholder='Email' id='email' name='email'/>
+        <HiddenLabel htmlFor='message'>Message</HiddenLabel>
+        <MessageTextArea placeholder='Message' id='message' name='message'/>
+        <SubmitButton type='submit'>Submit</SubmitButton>
+      </ContactForm>
     </ContactContent>
   </ContactContainer>
 );

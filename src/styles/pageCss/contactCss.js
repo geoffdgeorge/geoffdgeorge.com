@@ -11,10 +11,6 @@ const contactCss = {
     grid-template: auto / 1fr;
     justify-items: center;
 
-    @media (min-width: ${cssObj.vars.midBreakPoint}) {
-      grid-template: auto / 1fr 1fr;
-    }
-
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
         align-content: center;
         height: 100vh;
@@ -27,6 +23,16 @@ const contactCss = {
     ${cssObj.mixins.graphSettings}
     grid-column: 1 / -1;
     text-align: center`,
+  contactForm: `
+    display: grid;
+    grid-column: 1 / -1;
+    grid-gap: 1rem;
+    min-width: 100%
+    
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+      grid-template: auto / 1fr 1fr;
+    }
+    `,
   hiddenLabel: `
     ${cssObj.mixins.visuallyHidden}`,
   nameInput: `
