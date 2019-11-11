@@ -17,31 +17,33 @@ const HeaderTitle = styled.h1`
   ${headerCss.headerTitle}
 `;
 
-const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(
-        relativePath: { eq: "personal/High-Res-Square.jpg" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          title
+const titleAndImgQuery = graphql`
+  query {
+    placeholderImage: file(
+      relativePath: { eq: "personal/High-Res-Square.jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
-  `);
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+
+const Header = () => {
+  const data = useStaticQuery(titleAndImgQuery);
 
   return (
     <HeaderContent>
       <StyledHeaderImg
         fluid={data.placeholderImage.childImageSharp.fluid}
-        alt="A portrait photo of me"
+        alt="Portrait of Geoff George"
       />
       <HeaderTitle>{data.site.siteMetadata.title}</HeaderTitle>
       <Nav />
