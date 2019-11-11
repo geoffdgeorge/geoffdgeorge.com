@@ -57,7 +57,7 @@ const Contact = () => (
         <EmailInput placeholder='Email' id='email' name='email'/>
         <HiddenLabel htmlFor='message'>Message</HiddenLabel>
         <MessageTextArea placeholder='Message' id='message' name='message'/>
-        <SubmitButton type='submit'>Submit</SubmitButton>
+        <SubmitButton>Submit</SubmitButton>
       </ContactForm>
     </ContactContent>
   </ContactContainer>
