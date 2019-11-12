@@ -3,6 +3,7 @@ module.exports = {
     title: `Geoff George`,
     description: `Web Developer, editor, and writer, living in Chicago. This is a website for all my personal work.`,
     author: `Geoff George`,
+    defaultImg: `/images/personal/High-Res-Square.jpg`,
     navLinks: ['About', 'Portfolio', 'Blog', 'Contact'],
     portfolioItems: [
       {
