@@ -26,7 +26,7 @@ function SEO({ description, image, lang, meta, title }) {
     `
   );
 
-  const metaTitle = title || site.siteMetadata.title;
+  const fullTitle = `${site.siteMetadata.title} | ${title}`;
   const metaDescription = description || site.siteMetadata.description;
   const metaImage = image || site.siteMetadata.defaultImg;
 
@@ -64,7 +64,7 @@ function SEO({ description, image, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: metaTitle,
+          content: fullTitle,
         },
         {
           name: `twitter:description`,
