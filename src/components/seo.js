@@ -57,7 +57,7 @@ function SEO({ description, image, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: fullTitle,
         },
         {
           property: `og:description`,
