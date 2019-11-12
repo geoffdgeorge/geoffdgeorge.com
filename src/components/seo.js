@@ -16,19 +16,21 @@ function SEO({ description, image, lang, meta, title }) {
       query {
         site {
           siteMetadata {
-            title
-            description
             author
             defaultImg
+            description
+            title
+            url
           }
         }
       }
     `
   );
 
+  const siteUrl = site.siteMetadata.url;
   const fullTitle = `${site.siteMetadata.title} | ${title}`;
   const metaDescription = description || site.siteMetadata.description;
-  const metaImage = image || site.siteMetadata.defaultImg;
+  const metaImage = `${siteUrl}${image || site.siteMetadata.defaultImg}`;
 
   return (
     <Helmet
