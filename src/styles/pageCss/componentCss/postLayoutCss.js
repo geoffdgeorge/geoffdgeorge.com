@@ -18,13 +18,12 @@ const postLayoutCss = {
     transition: ${cssObj.vars.standardTransition};
     
     ${cssObj.mixins.activeHoverFocus(`
-    color: ${cssObj.vars.brown};
-    
-    > svg {
-      fill: ${cssObj.vars.brown}
-    }
-    `)}`,
-    arrowIcon: `
+      color: ${cssObj.vars.brown};
+      
+      > svg {
+        fill: ${cssObj.vars.brown}
+      }`)}`,
+  arrowIcon: `
     fill: ${cssObj.vars.teal};
     margin-right: .3rem;
     max-width: 1rem;
