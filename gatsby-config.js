@@ -84,7 +84,6 @@ module.exports = {
         layout: require.resolve(`./src/components/layout.js`),
       },
     },
-    `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-react-svg`,
