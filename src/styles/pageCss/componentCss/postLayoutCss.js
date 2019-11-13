@@ -20,7 +20,7 @@ const postLayoutCss = {
     ${cssObj.mixins.activeHoverFocus(`
     color: ${cssObj.vars.brown};
     
-    svg {
+    > svg {
       fill: ${cssObj.vars.brown}
     }
     `)}`,
