@@ -4,12 +4,15 @@ const layoutCss = {
   container: `
     display: grid;
     grid-template: 1fr / 1fr;
+    margin: 0 auto;
+    max-width: 80rem;
   
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
       grid-template: auto auto / 20rem 1fr;
     }`,
   main: `
     ${cssObj.mixins.gridCentered}
+    background-color: #FFF;
     min-height: calc(100vh - 5rem);
     padding: 2rem;
 

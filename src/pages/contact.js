@@ -2,6 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/seo';
 import contactCss from '../styles/pageCss/contactCss';
+import FacebookIcon from '../images/svgs/facebook.svg';
+import GitHubIcon from '../images/svgs/github.svg';
+import InstagramIcon from '../images/svgs/instagram.svg';
+import LinkedInIcon from '../images/svgs/linkedin2.svg';
+import StackOverflowIcon from '../images/svgs/stackoverflow.svg';
+import TwitterIcon from '../images/svgs/twitter.svg';
 
 const ContactContainer = styled.div`
   ${contactCss.contactContainer}
@@ -43,6 +49,26 @@ const SubmitButton = styled.button`
   ${contactCss.submitButton}
 `;
 
+const SocialContainer = styled.div`
+  ${contactCss.socialContainer}
+`;
+
+const SocialHeader = styled.div`
+  ${contactCss.socialHeader}
+`;
+
+const SocialTitle = styled.h3`
+  ${contactCss.socialTitle}
+`;
+
+const IconContainer = styled.div`
+  ${contactCss.iconContainer}
+`;
+
+const IconLink = styled.a`
+  ${contactCss.iconLink}
+`;
+
 const Contact = () => (
   <ContactContainer>
     <ContactContent>
@@ -67,6 +93,19 @@ const Contact = () => (
         <MessageTextArea placeholder="Message" id="message" name="message" />
         <SubmitButton>Submit</SubmitButton>
       </ContactForm>
+      <SocialContainer>
+        <SocialHeader>
+          <SocialTitle>Social</SocialTitle>
+        </SocialHeader>
+        <IconContainer>
+          <IconLink href='https://github.com/geoffdgeorge' target='_blank'><GitHubIcon /></IconLink>
+          <IconLink href='https://www.linkedin.com/in/geoff-george/' target='_blank'><LinkedInIcon /></IconLink>
+          <IconLink href='https://twitter.com/geoffdgeorge' target='_blank'><TwitterIcon /></IconLink>
+          <IconLink href='https://www.instagram.com/geoffdgeorge/' target='_blank'><InstagramIcon /></IconLink>
+          <IconLink href='https://stackoverflow.com/users/6623742/geoff-george' target='_blank'><StackOverflowIcon /></IconLink>
+          <IconLink href='https://www.facebook.com/geoffdgeorge' target='_blank'><FacebookIcon /></IconLink>
+        </IconContainer>
+      </SocialContainer>
     </ContactContent>
   </ContactContainer>
 );

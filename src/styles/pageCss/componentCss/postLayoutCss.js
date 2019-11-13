@@ -9,6 +9,26 @@ const postLayoutCss = {
     }`,
   postContent: `
     max-width: 35.6875rem;`,
+  postBackLink: `
+    align-items: center;
+    color: ${cssObj.vars.teal};
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    transition: ${cssObj.vars.standardTransition};
+    
+    ${cssObj.mixins.activeHoverFocus(`
+    color: ${cssObj.vars.brown};
+    
+    svg {
+      fill: ${cssObj.vars.brown}
+    }
+    `)}`,
+    arrowIcon: `
+    fill: ${cssObj.vars.teal};
+    margin-right: .3rem;
+    max-width: 1rem;
+    transition: ${cssObj.vars.standardTransition};`,
   postHeader: `
     font-family: ${cssObj.vars.notoSerifJP};
     font-size: 2.5rem;

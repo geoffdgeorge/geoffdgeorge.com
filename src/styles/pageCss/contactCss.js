@@ -13,7 +13,7 @@ const contactCss = {
 
     @media (min-width: ${cssObj.vars.largeBreakPoint}) {
         align-content: center;
-        height: 100vh;
+        min-height: 100vh;
         max-width: ${cssObj.vars.maxContentWidth} ;
     }`,
   contactTitle: `
@@ -47,13 +47,13 @@ const contactCss = {
     ${cssObj.mixins.inputSettings}
     ${cssObj.mixins.graphSettings}
     grid-column: 1 / -1;
-    height: 10rem;
+    height: 7rem;
     min-width: 100%`,
   submitButton: `
     grid-column: 1 / -1
     font-family: ${cssObj.vars.nunitoSans};
     font-weight: 200;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: .7rem;
     justify-self: center;
     background-color: ${cssObj.vars.teal};
@@ -64,6 +64,57 @@ const contactCss = {
       background-color: ${cssObj.vars.brown};
       box-shadow: ${cssObj.vars.dropShadow};
     `)}`,
+  socialContainer: `
+    min-width: 100%`,
+  socialHeader: `
+    margin: .5rem 0;
+    min-width: 100%;
+    position: relative;
+
+    :before {
+        background-color: ${cssObj.vars.brown};
+        content: '';
+        height: 0.0625rem;
+        min-width: 100%;
+        position: absolute;
+        top: 50%;
+    }`,
+  socialTitle: `
+    background-color: #fff;
+    color: ${cssObj.vars.brown};
+    font-family: ${cssObj.vars.nunitoSans};
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    position: relative;
+    max-width: max-content;
+    z-index: 2;
+
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+        font-size: 1.5rem;
+    }`,
+  iconContainer: `
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 18rem;
+
+    > a > svg {
+      fill: ${cssObj.vars.brown};
+      max-width: 1.75rem;
+      transition: ${cssObj.vars.standardTransition};
+    }
+
+    > a {
+      ${cssObj.mixins.activeHoverFocus(`
+        > svg {
+          fill: ${cssObj.vars.teal};
+          filter: drop-shadow(${cssObj.vars.dropShadow});
+        }`
+      )}
+    }`,
+  iconLink: ``,
 };
 
 export default contactCss;

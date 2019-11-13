@@ -1,7 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import UnstyledArrowIcon from '../../images/svgs/arrow-left2.svg';
 import postLayoutCss from '../../styles/pageCss/componentCss/postLayoutCss';
 
 const PostContainer = styled.div`
@@ -10,6 +12,14 @@ const PostContainer = styled.div`
 
 const PostContent = styled.div`
   ${postLayoutCss.postContent}
+`;
+
+const PostBackLink = styled(AniLink)`
+  ${postLayoutCss.postBackLink}
+`;
+
+const ArrowIcon = styled(UnstyledArrowIcon)`
+  ${postLayoutCss.arrowIcon}
 `;
 
 const PostHeader = styled.h2`
@@ -42,6 +52,9 @@ const Post = props => {
   return (
     <PostContainer>
       <PostContent>
+        <PostBackLink swipe direction="right" duration={0.3} to={`/blog`}>
+          <ArrowIcon />Back
+        </PostBackLink>
         <PostHeader>{markdownRemark.frontmatter.title}</PostHeader>
         <PostSubhead>{markdownRemark.frontmatter.subhead}</PostSubhead>
         <PostDate>{markdownRemark.frontmatter.date}</PostDate>
@@ -54,6 +67,9 @@ const Post = props => {
             __html: markdownRemark.html,
           }}
         />
+        <PostBackLink swipe direction="right" duration={0.3} to={`/blog`}>
+          <ArrowIcon />Back
+        </PostBackLink>
       </PostContent>
     </PostContainer>
   );
