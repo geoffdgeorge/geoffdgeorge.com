@@ -13,7 +13,7 @@ const cssVars = {
 
 const cssObj = {
   mixins: {
-    activeHoverFocus: tempLiteral => {
+    activeHoverFocus: (tempLiteral) => {
       return `
         :active,
         :hover,

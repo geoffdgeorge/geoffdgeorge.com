@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import portfolioDeskImgCss from '../../styles/pageCss/componentCss/portfolioDeskImgCss';
 
 const StyledImg = styled(Img)`
-  ${portfolioDeskImgCss.styledImg}
+  border: 1px solid black;
+  min-width: 100%;
 `;
 
 const PortfolioDeskImg = ({ path }) => (
@@ -25,9 +25,9 @@ const PortfolioDeskImg = ({ path }) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const image = data.allImageSharp.edges.find(
-        edge => edge.node.fluid.originalName === path
+        (edge) => edge.node.fluid.originalName === path
       );
       if (!image) {
         return null;

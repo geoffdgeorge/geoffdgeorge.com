@@ -3,18 +3,27 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/seo';
 import PortfolioItem from '../components/portfolioItem/portfolioItem';
-import portfolioCss from '../styles/pageCss/portfolioCss';
+import cssObj from '../styles/cssObj';
 
 const PortfolioContainer = styled.div`
-  ${portfolioCss.portfolioContainer}
+  display: grid;
+  grid-template: 1fr / 1fr;
+
+  @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+    min-height: 100vh;
+    padding-top: 2rem;
+  }
 `;
 
 const PortfolioContent = styled.div`
-  ${portfolioCss.portfolioContent}
+  display: grid;
+  grid-template: auto / 1fr;
+  grid-row-gap: 1rem;
+  justify-items: center;
 `;
 
 const PortfolioTitle = styled.h2`
-  ${portfolioCss.portfolioTitle}
+  ${cssObj.mixins.sectionTitle}
 `;
 
 const Portfolio = () => {
@@ -44,7 +53,7 @@ const Portfolio = () => {
       <SEO title="Portfolio" />
       <PortfolioContent>
         <PortfolioTitle>Portfolio</PortfolioTitle>
-        {portfolioItems.map(item => {
+        {portfolioItems.map((item) => {
           return (
             <PortfolioItem itemData={item} key={portfolioItems.indexOf(item)} />
           );

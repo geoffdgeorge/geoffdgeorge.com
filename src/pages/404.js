@@ -3,24 +3,30 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
-import fourOhFourCss from '../styles/pageCss/404Css';
+import cssObj from '../styles/cssObj';
 
 const ErrorContainer = styled.div`
-  ${fourOhFourCss.errorContainer}
+  display: grid;
+  justify-items: center;
+  align-content: center;
+
+  @media (min-width: 825px) {
+    min-height: 100vh;
+  }
 `;
 
 const StyledImg = styled(Img)`
-  ${fourOhFourCss.styledImg}
+  margin-bottom: 1rem;
+  width: 8rem;
 `;
 
 const ErrorHeader = styled.h2`
-  ${fourOhFourCss.errorHeader}
+  ${cssObj.mixins.sectionTitle}
 `;
 
 const ErrorMessage = styled.p`
-  ${fourOhFourCss.errorMessage}
+  ${cssObj.mixins.graphSettings}
 `;
-
 
 const imageQuery = graphql`
   query {
@@ -42,7 +48,9 @@ const NotFoundPage = () => {
       <SEO title="404: Not found" />
       <ErrorHeader>WHOOPS</ErrorHeader>
       <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} />
-      <ErrorMessage>So sorry. You've navigated to a route that doesn't exist.</ErrorMessage>
+      <ErrorMessage>
+        So sorry. You've navigated to a route that doesn't exist.
+      </ErrorMessage>
     </ErrorContainer>
   );
 };

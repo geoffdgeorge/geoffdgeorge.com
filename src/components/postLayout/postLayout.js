@@ -4,56 +4,125 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import UnstyledArrowIcon from '../../images/svgs/arrow-left2.svg';
-import postLayoutCss from '../../styles/pageCss/componentCss/postLayoutCss';
+import cssObj from '../../styles/cssObj';
 
 const PostContainer = styled.div`
-  ${postLayoutCss.postContainer}
+  ${cssObj.mixins.gridCentered}
+
+  @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+    padding-top: 2rem;
+  }
 `;
 
 const PostContent = styled.div`
-  ${postLayoutCss.postContent}
+  max-width: 35.6875rem;
 `;
 
 const PostBackLink = styled(AniLink)`
-  ${postLayoutCss.postBackLink}
+  align-items: center;
+  color: ${cssObj.vars.teal};
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  transition: ${cssObj.vars.standardTransition};
+
+  ${cssObj.mixins.activeHoverFocus(`
+    color: ${cssObj.vars.brown};
+    
+    > svg {
+      fill: ${cssObj.vars.brown}
+    }
+  `)}
 `;
 
 const ArrowIcon = styled(UnstyledArrowIcon)`
-  ${postLayoutCss.arrowIcon}
+  fill: ${cssObj.vars.teal};
+  margin-right: 0.3rem;
+  max-width: 1rem;
+  transition: ${cssObj.vars.standardTransition};
 `;
 
 const PostHeader = styled.h2`
-  ${postLayoutCss.postHeader}
+  font-family: ${cssObj.vars.notoSerifJP};
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
 `;
 
 const PostSubhead = styled.span`
-  ${postLayoutCss.postSubhead}
+  display: block;
+  font-family: ${cssObj.vars.notoSerifJP};
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 `;
 
 const PostDate = styled.span`
-  ${postLayoutCss.postDate}
+  color: ${cssObj.vars.teal};
+  display: block;
+  font-family: ${cssObj.vars.nunitoSans};
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
 `;
 
 const BannerImg = styled(Img)`
-  ${postLayoutCss.bannerImg}
+  margin-bottom: 0.3rem;
 `;
 
 const BannerImgCap = styled.figcaption`
-  ${postLayoutCss.bannerImgCap}
+  color: ${cssObj.vars.brown};
+  font-family: ${cssObj.vars.nunitoSans};
+  font-size: 0.8rem;
+  margin: 0 auto 1rem;
+  max-width: max-content;
 `;
 
 const PostMain = styled.div`
-  ${postLayoutCss.postMain}
+  p,
+  pre[class*='language-'],
+  ul,
+  ol,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: ${cssObj.vars.teal};
+    text-decoration: none;
+  }
+
+  ul,
+  ol {
+    ${cssObj.mixins.graphSettings}
+    margin: 1rem;
+  }
+
+  p {
+    ${cssObj.mixins.graphSettings}
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  pre[class*='language-'] {
+    margin-top: 0;
+  }
 `;
 
-const Post = props => {
+const Post = (props) => {
   const { markdownRemark } = props.data;
 
   return (
     <PostContainer>
       <PostContent>
         <PostBackLink swipe direction="right" duration={0.3} to={`/blog`}>
-          <ArrowIcon />Back
+          <ArrowIcon />
+          Back
         </PostBackLink>
         <PostHeader>{markdownRemark.frontmatter.title}</PostHeader>
         <PostSubhead>{markdownRemark.frontmatter.subhead}</PostSubhead>
@@ -68,7 +137,8 @@ const Post = props => {
           }}
         />
         <PostBackLink swipe direction="right" duration={0.3} to={`/blog`}>
-          <ArrowIcon />Back
+          <ArrowIcon />
+          Back
         </PostBackLink>
       </PostContent>
     </PostContainer>

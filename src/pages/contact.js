@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/seo';
-import contactCss from '../styles/pageCss/contactCss';
+import cssObj from '../styles/cssObj';
+
 import FacebookIcon from '../images/svgs/facebook.svg';
 import GitHubIcon from '../images/svgs/github.svg';
 import InstagramIcon from '../images/svgs/instagram.svg';
@@ -10,64 +11,145 @@ import StackOverflowIcon from '../images/svgs/stackoverflow.svg';
 import TwitterIcon from '../images/svgs/twitter.svg';
 
 const ContactContainer = styled.div`
-  ${contactCss.contactContainer}
+  display: grid;
+  grid-template: 1fr / 1fr;
+  justify-items: center;
 `;
 
 const ContactContent = styled.div`
-  ${contactCss.contactContent}
+  display: grid;
+  grid-gap: 1rem;
+  grid-template: auto / 1fr;
+  justify-items: center;
+
+  @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+    align-content: center;
+    min-height: 100vh;
+    max-width: ${cssObj.vars.maxContentWidth};
+  }
 `;
 
 const ContactTitle = styled.h2`
-  ${contactCss.contactTitle}
+  ${cssObj.mixins.sectionTitle}
+  grid-column: 1 / -1;
 `;
 
 const ContactGraph = styled.p`
-  ${contactCss.contactGraph}
+  ${cssObj.mixins.graphSettings}
+  grid-column: 1 / -1;
+  text-align: center;
 `;
 
 const ContactForm = styled.form`
-  ${contactCss.contactForm}
+  display: grid;
+  grid-column: 1 / -1;
+  grid-gap: 1rem;
+  min-width: 100%;
+
+  @media (min-width: ${cssObj.vars.midBreakPoint}) {
+    grid-template: auto / 1fr 1fr;
+  }
 `;
 
 const HiddenLabel = styled.label`
-  ${contactCss.hiddenLabel}
+  ${cssObj.mixins.visuallyHidden}
 `;
 
 const NameInput = styled.input`
-  ${contactCss.nameInput}
+  ${cssObj.mixins.inputSettings}
+  ${cssObj.mixins.graphSettings}
+  width: 100%;
 `;
 
 const EmailInput = styled.input`
-  ${contactCss.emailInput}
+  ${cssObj.mixins.inputSettings}
+  ${cssObj.mixins.graphSettings}
+  width: 100%;
 `;
 
 const MessageTextArea = styled.textarea`
-  ${contactCss.messageTextArea}
+  ${cssObj.mixins.inputSettings}
+  ${cssObj.mixins.graphSettings}
+  grid-column: 1 / -1;
+  height: 7rem;
+  min-width: 100%;
 `;
 
 const SubmitButton = styled.button`
-  ${contactCss.submitButton}
+  grid-column: 1 / -1;
+  font-family: ${cssObj.vars.nunitoSans};
+  font-weight: 200;
+  font-size: 1.1rem;
+  padding: 0.7rem;
+  justify-self: center;
+  background-color: ${cssObj.vars.teal};
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+
+  ${cssObj.mixins.activeHoverFocus(`
+    background-color: ${cssObj.vars.brown};
+    box-shadow: ${cssObj.vars.dropShadow};
+  `)}
 `;
 
 const SocialContainer = styled.div`
-  ${contactCss.socialContainer}
+  min-width: 100%;
 `;
 
 const SocialHeader = styled.div`
-  ${contactCss.socialHeader}
+  margin: 0.5rem 0;
+  min-width: 100%;
+  position: relative;
+
+  :before {
+    background-color: ${cssObj.vars.brown};
+    content: '';
+    height: 0.0625rem;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+  }
 `;
 
 const SocialTitle = styled.h3`
-  ${contactCss.socialTitle}
+  background-color: #fff;
+  color: ${cssObj.vars.brown};
+  font-family: ${cssObj.vars.nunitoSans};
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  position: relative;
+  max-width: max-content;
+  z-index: 2;
+
+  @media (min-width: ${cssObj.vars.midBreakPoint}) {
+    font-size: 1.5rem;
+  }
 `;
 
 const IconContainer = styled.div`
-  ${contactCss.iconContainer}
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 18rem;
+
+  > a > svg {
+    fill: ${cssObj.vars.brown};
+    max-width: 1.75rem;
+    transition: ${cssObj.vars.standardTransition};
+  }
+
+  > a {
+    ${cssObj.mixins.activeHoverFocus(`
+      > svg {
+        fill: ${cssObj.vars.teal};
+        filter: drop-shadow(${cssObj.vars.dropShadow});
+      }`)}
+  }
 `;
 
-const IconLink = styled.a`
-  ${contactCss.iconLink}
-`;
+const IconLink = styled.a``;
 
 const Contact = () => (
   <ContactContainer>
@@ -98,12 +180,36 @@ const Contact = () => (
           <SocialTitle>Social</SocialTitle>
         </SocialHeader>
         <IconContainer>
-          <IconLink href='https://github.com/geoffdgeorge' target='_blank'><GitHubIcon /></IconLink>
-          <IconLink href='https://www.linkedin.com/in/geoff-george/' target='_blank'><LinkedInIcon /></IconLink>
-          <IconLink href='https://twitter.com/geoffdgeorge' target='_blank'><TwitterIcon /></IconLink>
-          <IconLink href='https://www.instagram.com/geoffdgeorge/' target='_blank'><InstagramIcon /></IconLink>
-          <IconLink href='https://stackoverflow.com/users/6623742/geoff-george' target='_blank'><StackOverflowIcon /></IconLink>
-          <IconLink href='https://www.facebook.com/geoffdgeorge' target='_blank'><FacebookIcon /></IconLink>
+          <IconLink href="https://github.com/geoffdgeorge" target="_blank">
+            <GitHubIcon />
+          </IconLink>
+          <IconLink
+            href="https://www.linkedin.com/in/geoff-george/"
+            target="_blank"
+          >
+            <LinkedInIcon />
+          </IconLink>
+          <IconLink href="https://twitter.com/geoffdgeorge" target="_blank">
+            <TwitterIcon />
+          </IconLink>
+          <IconLink
+            href="https://www.instagram.com/geoffdgeorge/"
+            target="_blank"
+          >
+            <InstagramIcon />
+          </IconLink>
+          <IconLink
+            href="https://stackoverflow.com/users/6623742/geoff-george"
+            target="_blank"
+          >
+            <StackOverflowIcon />
+          </IconLink>
+          <IconLink
+            href="https://www.facebook.com/geoffdgeorge"
+            target="_blank"
+          >
+            <FacebookIcon />
+          </IconLink>
         </IconContainer>
       </SocialContainer>
     </ContactContent>

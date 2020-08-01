@@ -3,10 +3,16 @@ import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import Header from '../header/header';
 import BackgroundImage from 'gatsby-background-image';
-import bgImgCss from '../../styles/pageCss/componentCss/bgImgCss';
+import cssObj from '../../styles/cssObj';
 
 const StyledBackgroundImage = styled(BackgroundImage)`
-  ${bgImgCss.styledBackgroundImage};
+  position: relative;
+
+  @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+    min-height: 100vh;
+    position: fixed;
+    width: 20rem;
+  }
 `;
 
 const UnstyledBackgroundSection = () => (
@@ -24,7 +30,7 @@ const UnstyledBackgroundSection = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       // Set ImageData.
       const imageData = data.placeholderImage.childImageSharp.fluid;
       return (

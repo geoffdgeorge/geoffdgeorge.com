@@ -39,9 +39,9 @@ function SEO({ description, image, lang, meta, title }) {
   const siteUrl = site.siteMetadata.url;
   const fullTitle = `${site.siteMetadata.title} | ${title}`;
   const metaDescription = description || site.siteMetadata.description;
-  const metaImage = `${siteUrl}${image || placeholderImage.childImageSharp.fluid.src}`;
-
-  console.log(metaImage);
+  const metaImage = `${siteUrl}${
+    image || placeholderImage.childImageSharp.fluid.src
+  }`;
 
   return (
     <Helmet

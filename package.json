@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "geoffdgeorge.com",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "The personal website of Geoff George",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Geoff George <geoffdgeorge@gmail.com>",
   "dependencies": {
     "@material-ui/styles": "^4.4.1",
     "babel-plugin-styled-components": "^1.10.6",
@@ -34,7 +34,7 @@
     "typeface-nunito-sans": "0.0.72"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^2.0.5"
   },
   "keywords": [
     "gatsby"

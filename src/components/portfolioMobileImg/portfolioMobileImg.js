@@ -3,10 +3,14 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import portfolioMobileImgCss from '../../styles/pageCss/componentCss/portfolioMobileImgCss';
+import cssObj from '../../styles/cssObj';
 
 const StyledImg = styled(Img)`
-  ${portfolioMobileImgCss.styledImg}
+  min-width: 100%;
+
+  img {
+    transition: ${cssObj.vars.standardTransition} !important;
+  }
 `;
 
 const PortfolioMobileImg = ({ path }) => (
@@ -25,14 +29,16 @@ const PortfolioMobileImg = ({ path }) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const image = data.allImageSharp.edges.find(
-        edge => edge.node.fluid.originalName === path
+        (edge) => edge.node.fluid.originalName === path
       );
       if (!image) {
         return null;
       }
-      return <StyledImg fluid={image.node.fluid} style={{overflow: 'visible'}} />;
+      return (
+        <StyledImg fluid={image.node.fluid} style={{ overflow: 'visible' }} />
+      );
     }}
   />
 );

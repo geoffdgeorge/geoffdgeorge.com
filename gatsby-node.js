@@ -20,8 +20,8 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `).then(results => {
-      results.data.allMarkdownRemark.nodes.forEach(node => {
+    `).then((results) => {
+      results.data.allMarkdownRemark.nodes.forEach((node) => {
         createPage({
           path: `/blog/${node.frontmatter.slug}`,
           component: path.resolve(`./src/components/postLayout/postLayout.js`),

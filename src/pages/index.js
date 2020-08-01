@@ -1,27 +1,53 @@
 import React from 'react';
 import styled from 'styled-components';
 import SEO from '../components/seo';
-import indexCss from '../styles/pageCss/indexCss';
-
+import cssObj from '../styles/cssObj';
 
 const IntroContainer = styled.section`
-  ${indexCss.introContainer}
+  display: grid;
+  grid-template: 1fr / 1fr;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 24rem;
+
+  @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+    max-width: initial;
+    min-height: 100vh;
+  }
 `;
 
 const IntroContent = styled.div`
-  ${indexCss.introContent}
+  display: grid;
+  grid-auto-rows: min-content;
+  max-width: ${cssObj.vars.maxContentWidth};
+
+  @media (min-width: ${cssObj.vars.largeBreakPoint}) {
+    align-content: center;
+    justify-items: center;
+  }
 `;
 
 const IntroTitle = styled.h2`
-  ${indexCss.introTitle}
+  color: ${cssObj.vars.teal};
+  font-family: ${cssObj.vars.nunitoSans};
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+  text-align: center;
 `;
 
 const IntroGraph = styled.p`
-  ${indexCss.introGraph}
+  ${cssObj.mixins.graphSettings}
+  margin-bottom: 1rem;
+
+  :last-child {
+    margin-bottom: 0;
+  }
 `;
 
 const IntroLink = styled.a`
-  ${indexCss.introLink}
+  color: ${cssObj.vars.teal};
+  text-decoration: none;
 `;
 
 const IndexPage = () => (
