@@ -15,7 +15,6 @@ const Container = styled.div`
   display: grid;
   grid-template: 1fr / 1fr;
   margin: 0 auto;
-  max-width: 80rem;
 
   @media (min-width: ${cssObj.vars.largeBreakPoint}) {
     grid-template: auto auto / 20rem 1fr;

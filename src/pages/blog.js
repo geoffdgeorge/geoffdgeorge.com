@@ -10,6 +10,7 @@ const BlogContainer = styled.div`
   display: grid;
   grid-template: 1fr / 1fr;
   justify-items: center;
+  align-items: start;
   min-height: 100vh;
   overflow-y: hidden;
 
@@ -21,7 +22,7 @@ const BlogContainer = styled.div`
 const BlogContent = styled.div`
   display: grid;
   justify-items: center;
-  grid-template: min-content / 1fr;
+  grid-template: max-content / 1fr;
   grid-gap: 1rem;
   max-width: ${cssObj.vars.maxContentWidth};
 `;
@@ -37,8 +38,7 @@ const PostContainer = styled(AniLink)`
   display: grid;
   height: max-content;
   grid-gap: 0.5rem;
-  grid-template: min-content / 1fr;
-
+  grid-template: max-content / 1fr;
   padding-top: 1rem;
   text-decoration: none;
 
@@ -48,7 +48,7 @@ const PostContainer = styled(AniLink)`
   }
 
   @media (min-width: ${cssObj.vars.midBreakPoint}) {
-    grid-template: min-content / 3fr 4fr;
+    grid-template: max-content / 3fr 4fr;
   }
 `;
 
@@ -103,7 +103,7 @@ const blogDataQuery = graphql`
         excerpt(pruneLength: 115)
         frontmatter {
           title
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "MMMM D, YYYY")
           slug
           key
           bannerImg {
@@ -141,7 +141,7 @@ const Blog = () => {
               <PostTitle>{node.frontmatter.title}</PostTitle>
               <StyledImg
                 fluid={node.frontmatter.bannerImg.childImageSharp.fluid}
-              ></StyledImg>
+              />
               <PostExcerpt>{node.excerpt}</PostExcerpt>
               <PostLink>Read More</PostLink>
             </PostContainer>
