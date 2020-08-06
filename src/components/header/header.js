@@ -1,8 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import Nav from '../nav/nav';
 import React from 'react';
+
+import Nav from '../nav/nav';
 import cssObj from '../../styles/cssObj';
 
 const HeaderContent = styled.nav`

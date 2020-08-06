@@ -2,6 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import React from 'react';
+
 import cssObj from '../../styles/cssObj';
 
 const NavUl = styled.ul`

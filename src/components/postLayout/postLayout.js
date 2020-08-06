@@ -3,8 +3,10 @@ import { graphql } from 'gatsby';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import UnstyledArrowIcon from '../../images/svgs/arrow-left2.svg';
+
 import cssObj from '../../styles/cssObj';
+
+import UnstyledArrowIcon from '../../images/svgs/arrow-left2.svg';
 
 const PostContainer = styled.div`
   ${cssObj.mixins.gridCentered}

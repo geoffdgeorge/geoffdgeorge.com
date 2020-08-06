@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+
 import cssObj from '../../styles/cssObj';
 
 const StyledImg = styled(Img)`

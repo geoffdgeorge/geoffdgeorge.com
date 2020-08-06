@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import PortfolioDeskImg from '../portfolioDeskImg/portfolioDeskImg';
 import PortfolioMobileImg from '../portfolioMobileImg/portfolioMobileImg';
 import cssObj from '../../styles/cssObj';

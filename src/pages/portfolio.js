@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+
 import SEO from '../components/seo';
 import PortfolioItem from '../components/portfolioItem/portfolioItem';
 import cssObj from '../styles/cssObj';

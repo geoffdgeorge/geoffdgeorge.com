@@ -1,8 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import SEO from '../components/seo';
 import Img from 'gatsby-image';
+
+import SEO from '../components/seo';
 import cssObj from '../styles/cssObj';
 
 const ErrorContainer = styled.div`

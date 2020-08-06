@@ -3,6 +3,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import Header from '../header/header';
 import BackgroundImage from 'gatsby-background-image';
+
 import cssObj from '../../styles/cssObj';
 
 const StyledBackgroundImage = styled(BackgroundImage)`
