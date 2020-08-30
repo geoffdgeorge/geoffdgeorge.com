@@ -33,4 +33,3 @@ This is the latest version of my personal portfolio site, built with the [Gatsby
 - The main blog archive page still needs to be paginated (with five posts per page)
 - Roles should be specified for all landmark elements, for better accessibility
 - Aria-labels should be added where necessary
-- Swipe animations between pages could be smoother
