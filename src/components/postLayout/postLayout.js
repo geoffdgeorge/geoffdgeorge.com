@@ -68,6 +68,21 @@ const PostDate = styled.span`
   margin-bottom: 1.5rem;
 `;
 
+const PortraitBannerImgContainer = styled.div`
+  width: 55%;
+  float: right;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+`;
+
+const PortraitBannerImg = styled(Img)`
+  margin-bottom: 0.3rem;
+`;
+
+const BannerImgContainer = styled.div`
+  margin-bottom 1rem;
+`;
+
 const BannerImg = styled(Img)`
   margin-bottom: 0.3rem;
 `;
@@ -76,7 +91,7 @@ const BannerImgCap = styled.figcaption`
   color: ${cssObj.vars.brown};
   font-family: ${cssObj.vars.nunitoSans};
   font-size: 0.8rem;
-  margin: 0 auto 1rem;
+  margin: 0 auto;
   max-width: max-content;
 `;
 
@@ -119,6 +134,8 @@ const PostMain = styled.div`
 const Post = (props) => {
   const { markdownRemark } = props.data;
 
+  console.log(markdownRemark.frontmatter.bannerImg.childImageSharp.fluid.aspectRatio)
+
   return (
     <PostContainer>
       <PostContent>
@@ -129,10 +146,17 @@ const Post = (props) => {
         <PostHeader>{markdownRemark.frontmatter.title}</PostHeader>
         <PostSubhead>{markdownRemark.frontmatter.subhead}</PostSubhead>
         <PostDate>{markdownRemark.frontmatter.date}</PostDate>
-        <BannerImg
-          fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid}
-        ></BannerImg>
-        <BannerImgCap>{markdownRemark.frontmatter.bannerImgCap}</BannerImgCap>
+        {
+          markdownRemark.frontmatter.bannerImg.childImageSharp.fluid.aspectRatio < 1 
+            ? <PortraitBannerImgContainer>
+                <PortraitBannerImg fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid} />
+                <BannerImgCap>{markdownRemark.frontmatter.bannerImgCap}</BannerImgCap>
+              </PortraitBannerImgContainer>
+            : <BannerImgContainer>
+                <BannerImg fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid} />
+                <BannerImgCap>{markdownRemark.frontmatter.bannerImgCap}</BannerImgCap>
+              </BannerImgContainer>
+        }
         <PostMain
           dangerouslySetInnerHTML={{
             __html: markdownRemark.html,
