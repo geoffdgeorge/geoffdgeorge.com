@@ -134,8 +134,6 @@ const PostMain = styled.div`
 const Post = (props) => {
   const { markdownRemark } = props.data;
 
-  console.log(markdownRemark.frontmatter.bannerImg.childImageSharp.fluid.aspectRatio)
-
   return (
     <PostContainer>
       <PostContent>
@@ -146,17 +144,26 @@ const Post = (props) => {
         <PostHeader>{markdownRemark.frontmatter.title}</PostHeader>
         <PostSubhead>{markdownRemark.frontmatter.subhead}</PostSubhead>
         <PostDate>{markdownRemark.frontmatter.date}</PostDate>
-        {
-          markdownRemark.frontmatter.bannerImg.childImageSharp.fluid.aspectRatio < 1 
-            ? <PortraitBannerImgContainer>
-                <PortraitBannerImg fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid} />
-                <BannerImgCap>{markdownRemark.frontmatter.bannerImgCap}</BannerImgCap>
-              </PortraitBannerImgContainer>
-            : <BannerImgContainer>
-                <BannerImg fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid} />
-                <BannerImgCap>{markdownRemark.frontmatter.bannerImgCap}</BannerImgCap>
-              </BannerImgContainer>
-        }
+        {markdownRemark.frontmatter.bannerImg.childImageSharp.fluid
+          .aspectRatio < 1 ? (
+          <PortraitBannerImgContainer>
+            <PortraitBannerImg
+              fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid}
+            />
+            <BannerImgCap>
+              {markdownRemark.frontmatter.bannerImgCap}
+            </BannerImgCap>
+          </PortraitBannerImgContainer>
+        ) : (
+          <BannerImgContainer>
+            <BannerImg
+              fluid={markdownRemark.frontmatter.bannerImg.childImageSharp.fluid}
+            />
+            <BannerImgCap>
+              {markdownRemark.frontmatter.bannerImgCap}
+            </BannerImgCap>
+          </BannerImgContainer>
+        )}
         <PostMain
           dangerouslySetInnerHTML={{
             __html: markdownRemark.html,
