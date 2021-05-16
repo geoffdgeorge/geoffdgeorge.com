@@ -5,40 +5,40 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 const StyledImg = styled(Img)`
-  border: 1px solid black;
-  min-width: 100%;
+    border: 1px solid black;
+    min-width: 100%;
 `;
 
 const PortfolioDeskImg = ({ path }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allImageSharp {
-          edges {
-            node {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid
-                originalName
-              }
+    <StaticQuery
+        query={graphql`
+            query {
+                allImageSharp {
+                    edges {
+                        node {
+                            fluid(maxWidth: 500) {
+                                ...GatsbyImageSharpFluid
+                                originalName
+                            }
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    `}
-    render={(data) => {
-      const image = data.allImageSharp.edges.find(
-        (edge) => edge.node.fluid.originalName === path
-      );
-      if (!image) {
-        return null;
-      }
-      return <StyledImg fluid={image.node.fluid} />;
-    }}
-  />
+        `}
+        render={(data) => {
+            const image = data.allImageSharp.edges.find(
+                (edge) => edge.node.fluid.originalName === path
+            );
+            if (!image) {
+                return null;
+            }
+            return <StyledImg fluid={image.node.fluid} />;
+        }}
+    />
 );
 
 PortfolioDeskImg.propTypes = {
-  path: PropTypes.string,
+    path: PropTypes.string,
 };
 
 export default PortfolioDeskImg;
