@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="./src/images/personal/High-Res-Square.jpg" width="120" style='border-radius: 50%' />
+    <img alt="Gatsby" src="./src/images/personal/illustrated_portrait.jpeg" width="120" style='border-radius: 50%' />
   </a>
 </p>
 <h1 align="center">

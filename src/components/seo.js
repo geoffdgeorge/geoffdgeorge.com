@@ -17,7 +17,7 @@ function SEO({ description, image, lang, meta, title }) {
                     }
                 }
                 placeholderImage: file(
-                    relativePath: { eq: "personal/High-Res-Square.jpg" }
+                    relativePath: { eq: "personal/illustrated_portrait.jpeg" }
                 ) {
                     childImageSharp {
                         fluid(maxWidth: 300) {

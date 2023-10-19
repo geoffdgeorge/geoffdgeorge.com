@@ -1,89 +1,155 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 import SEO from '../components/seo';
 import cssObj from '../styles/cssObj';
 
-const IntroContainer = styled.section`
+const BlogContainer = styled.div`
     display: grid;
     grid-template: 1fr / 1fr;
     justify-items: center;
-    margin: 0 auto;
-    max-width: 24rem;
-
-    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
-        max-width: initial;
-        min-height: 100vh;
-    }
+    align-items: start;
+    min-height: 100%;
 `;
 
-const IntroContent = styled.div`
+const BlogContent = styled.div`
     display: grid;
-    grid-auto-rows: min-content;
+    justify-items: center;
+    grid-template: max-content / 1fr;
+    grid-gap: 3rem;
     max-width: ${cssObj.vars.maxContentWidth};
-
-    @media (min-width: ${cssObj.vars.largeBreakPoint}) {
-        align-content: center;
-        justify-items: center;
-    }
 `;
 
-const IntroTitle = styled.h2`
-    color: ${cssObj.vars.teal};
-    font-family: ${cssObj.vars.nunitoSans};
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 0 0 1rem 0;
-    text-align: center;
-`;
-
-const IntroGraph = styled.p`
-    ${cssObj.mixins.graphSettings}
-    margin-bottom: 1rem;
+const PostContainer = styled(AniLink)`
+    align-content: center;
+    color: #000;
+    display: grid;
+    height: max-content;
+    grid-gap: 0.5rem;
+    grid-template: max-content / 1fr;
+    text-decoration: none;
 
     :last-child {
-        margin-bottom: 0;
+        padding-bottom: 1rem;
+    }
+
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+        grid-template: max-content / 3fr 4fr;
     }
 `;
 
-const IntroLink = styled.a`
-    color: ${cssObj.vars.teal};
-    text-decoration: none;
+const PostTitleContainer = styled.div`
+    grid-column: 1 / -1;
+    min-width: 100%;
+    position: relative;
+
+    :before {
+        background-color: ${cssObj.vars.brown};
+        content: '';
+        height: 0.0625rem;
+        min-width: 100%;
+        position: absolute;
+        top: 50%;
+    }
 `;
 
-const IndexPage = () => (
-    <IntroContainer>
-        <SEO title="About Me" />
-        <IntroContent>
-            <IntroTitle>Hey there!</IntroTitle>
-            <IntroGraph>
-                I&rsquo;m a longtime magazine writer and editor turned web
-                developer and programmer. I first caught the coding bug while
-                reading Paul Ford&rsquo;s issue-length{' '}
-                <IntroLink
-                    href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/"
-                    target="_blank"
-                >
-                    &ldquo;What Is Code?&rdquo;
-                </IntroLink>{' '}
-                piece in <em>Bloomberg Businessweek</em>, and after a few
-                years&mdash;dabbling in web tutorials here and spending time on{' '}
-                <IntroLink href="https://www.freecodecamp.org" target="_blank">
-                    FreeCodeCamp.org
-                </IntroLink>{' '}
-                there&mdash;I committed to and completed Northwestern
-                University&rsquo;s coding boot camp.
-            </IntroGraph>
-            <IntroGraph>
-                Now I&rsquo;m leveraging my know-how of syntax and language and
-                my precision as an editor to get up to speed with new languages
-                and libraries quickly and write clean code for web and mobile
-                apps. I&rsquo;m combining my new skills with my experience as a
-                content creator and deadline-driven project manager to continue
-                to move beyond the printed page into full-stack development.
-            </IntroGraph>
-        </IntroContent>
-    </IntroContainer>
-);
+const PostTitle = styled.h3`
+    background-color: #fff;
+    color: ${cssObj.vars.brown};
+    font-family: ${cssObj.vars.nunitoSans};
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    position: relative;
+    max-width: max-content;
+    z-index: 2;
 
-export default IndexPage;
+    @media (min-width: ${cssObj.vars.midBreakPoint}) {
+        font-size: 1.5rem;
+    }
+`;
+
+const PostDate = styled.p`
+    color: ${cssObj.vars.teal};
+    font-family: ${cssObj.vars.nunitoSans};
+    font-size: 0.8rem;
+    font-weight: bold;
+    justify-self: start;
+    align-self: end;
+`;
+
+const StyledImg = styled(Img)`
+    display: block;
+    grid-row: 2 / 4;
+    object-fit: cover;
+    object-position: center center;
+`;
+
+const PostExcerpt = styled.p`
+    ${cssObj.mixins.graphSettings}
+`;
+
+const blogDataQuery = graphql`
+    query {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+            nodes {
+                excerpt(pruneLength: 155)
+                frontmatter {
+                    title
+                    date(formatString: "MMMM D, YYYY")
+                    slug
+                    key
+                    bannerImg {
+                        childImageSharp {
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
+const Blog = () => {
+    const blogData = useStaticQuery(blogDataQuery);
+    const { nodes } = blogData.allMarkdownRemark;
+
+    return (
+        <BlogContainer>
+            <BlogContent>
+                <SEO title="Blog" />
+                {nodes.map((node) => {
+                    return (
+                        <PostContainer
+                            swipe
+                            direction="left"
+                            duration={0.3}
+                            to={`/blog/${node.frontmatter.slug}`}
+                            key={node.frontmatter.key}
+                        >
+                            <PostTitleContainer>
+                                <PostTitle>{node.frontmatter.title}</PostTitle>
+                            </PostTitleContainer>
+                            <StyledImg
+                                fluid={
+                                    node.frontmatter.bannerImg.childImageSharp
+                                        .fluid
+                                }
+                            />
+                            <PostExcerpt>{node.excerpt}</PostExcerpt>
+                            <PostDate>{node.frontmatter.date}</PostDate>
+                        </PostContainer>
+                    );
+                })}
+            </BlogContent>
+        </BlogContainer>
+    );
+};
+
+export default Blog;
