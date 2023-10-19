@@ -8,7 +8,7 @@ bannerImgCap: Image by Fernando Arcos (@ferarcosn), from Pexels.com
 key: 1
 ---
 
-I turned forty earlier this month. Fourteen days ago, in fact. Took the day off. Woke up late. I think I did some laundry. Might have played a little of *Life Is Strange: True Colors* but quickly got bored. My wife made buffalo cauliflower wings and a lemon tart with shortbread crust—the same birthday dinner she's made the past three or four years, since the first time I had it and practically fell to my knees.
+I turned forty earlier this month. Fifteen days ago, in fact. Took the day off. Woke up late. I think I did some laundry. Might have played a little of *Life Is Strange: True Colors* but quickly got bored. My wife made buffalo cauliflower wings and a lemon tart with shortbread crust—the same birthday dinner she's made the past three or four years, since the first time I had it and practically fell to my knees.
 
 So it was a good, chill birthday. The best kind, in my opinion. But I've also been feeling the typical midlife dread. Had a dermatology checkup recently for some itchy skin, which turned into a conversation about a questionable mole, which I get to go back and have biopsied later today (”Don’t lose any sleep over it,” the doc told me during the last visit, but sometimes that’s easier said than done). Also had my first colonoscopy last week, five years earlier than most because of some family history.
 
